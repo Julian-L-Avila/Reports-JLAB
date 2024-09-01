@@ -1,0 +1,94 @@
+\documentclass[journal, table]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
+\usepackage[sorting=none]{biblatex} 
+\bibliography{ref.bib}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb, mathtools}
+\usepackage{hyperref, url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr, last page}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[affil-sl]{authblk}
+\usepackage{anyfontsize}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{tabularx, ragged2e, booktabs}
+\usepackage{siunitx}
+\usepackage[spanish]{cleveref}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\AtBeginDocument{\decimalpoint}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\setkeys{Gin}{width=0.8\linewidth}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdftitle={Lab - JLBA}
+}
+\urlstyle{same}
+\sisetup{separate-uncertainty}
+
+\begin{document}
+
+\title{\textbf{} \\
+    \small{}}
+
+\author[*]{Laura Herrera
+    \thanks{Laura Herrera: 20212107011}}
+\author[*]{Bryan Martínez
+    \thanks{Bryan Martínez: 20212107008}}
+\author[*]{Julian Avila
+    \thanks{Julian Avila: 20212107030}}
+\author[*]{Juan Acuña
+    \thanks{Juan Acuña: 20212107034}}
+
+
+\affil[*]{Proyecto Curricular de Fisica\\ Universidad Distrital Francisco José de Caldas}
+
+\markboth{}
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+\maketitle
+
+\selectlanguage{english}
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\selectlanguage{spanish}
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\section{Objetivos}
+\begin{itemize}
+    \item Calcular la carga del electrón
+    \item Determinar la velocidad de subida y bajada de las gotas de aceite
+    \item Determinar la carga y radio de una gota de aceite ionizada
+\end{itemize}
+
+\section{Marco teórico}
+\include{./marco-teorico.tex}
+
+\section{Resultados y Análisis}
+
+
+\section{Conclusiones}
+
+\printbibliography
+\end{document}

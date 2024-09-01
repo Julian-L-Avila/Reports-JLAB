@@ -1,0 +1,102 @@
+En el experimento de Millikan se aprecian una serie de fenómenos asociados al comportamiento de los fluidos además de la electricidad y magnetismo; en el montaje se encuentra una gota de aceite de una densidad $\rho_{ac}$ que se encuentra en caída donde alcanza una velocidad terminal $v_c$ gracias a las fuerzas de fricción que el aire con densidad $\rho_a$ le ofrece a esta; luego se le aplica una diferencia de potencial $V$ a unas placas paralelas de distancia $d$ en la región inferior y posterior de la gota teniendo una polaridad positiva en la placa superior. En el primer intervalo de tiempo se puede realizar un diagrama de cuerpo libre de la gota de aceite.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+    \caption{Diagrama de cuerpo libre de la gota de aceite en el primer intervalo de tiempo}
+    \label{fig:enter-label}
+\end{figure}
+
+Entre las fuerzas ejercidas a la gota de aceite se encuentran la fuerza gravitacional $\Vec{F_g}$, la fuerza asociada al empuje o flotabilidad descrito por el principio de Arquimedes $\Vec{F_E}$ y la fuerza de fricción generada por el aire $\Vec{F_d}$ descrito por la ley de Stokes.\\
+
+Inicialmente la gota es acelerada en dirección a la tierra pero prontamente llega a una velocidad terminal, esto indica un equilibrio de fuerzas.
+
+\begin{equation}
+    \begin{split}
+        \sum \Vec{F}=0\\
+        \lvert \Vec{F_d}\rvert + \lvert\Vec{F_E}\rvert + \lvert \Vec{F_g}\rvert =0
+    \end{split}
+\end{equation}
+
+La fuerza de la gravedad, flotación y fricción se describe respectivamente de la siguiente manera en donde $V_{ac}$ representa el volumen de la gota de aceite y $\mu$ es el coeficiente de viscosidad del aire:
+
+\begin{equation}
+    \begin{split}
+        \Vec{F_g}=m\Vec{g}\\
+        \Vec{F_E}=-\rho_a \Vec{g}V_{ac}\\
+        \Vec{F_d}=-6\pi R\mu \Vec{v_c}
+    \end{split}
+\end{equation}
+
+Tomando en cuenta únicamente las magnitudes y remplazando se encuentra que:
+
+\begin{equation}
+    6\pi R\mu v_c=mg-\rho_a \Vec{g}V_{ac}
+\end{equation}
+
+Debido a que no se mide la masa de la gota, se dejará el volumen $V_{ac}$ y la masa $m$ en términos de su radio $R$ utilizando las ecuaciones
+
+\begin{equation}
+    \begin{split}
+        V_{ac}=\frac{4}{3}\pi R^3\\
+        m=\frac{4}{3}\pi R^3\rho_{ac}
+    \end{split}
+\end{equation}
+
+Remplazando y operando se obtiene
+
+\begin{equation}
+    \begin{split}
+        6\pi R\mu v_c=\frac{4}{3}\pi R^3(\rho_{ac}-\rho_a)g
+    \end{split}
+\end{equation}
+
+de la cual se obtiene el valor para $R$
+
+\begin{equation}
+    \begin{split}
+        R=\sqrt{\frac{9\mu v_c}{2g(\rho_{ac}-\rho_a)}}
+    \end{split}
+\end{equation}
+
+Para el segundo intervalo de tiempo, se aplica una diferencia de potencial y la gota empieza a ascender hacia la placa superior, nuevamente al llegar a la velocidad terminal, esta vez llamada $v_a$ ocurre un equilibrio de fuerzas en donde $\Vec{F_e}$ es la fuerza eléctrica.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+    \caption{Diagrama de cuerpo libre de la gota de aceite en el segundo intervalo de tiempo}
+    \label{fig:enter-label}
+\end{figure}
+
+Las ecuaciones para el diagrama de cuerpo libre se ve tal que
+
+\begin{equation}
+    \begin{split}
+        \lvert\Vec{F}_E\rvert + \lvert \Vec{F_e}\rvert + \lvert \Vec{F_g}\rvert+\lvert \Vec{F_d}\rvert =0
+    \end{split}
+\end{equation}
+
+Nuevamente se utilizan solo sus magnitudes, remplazando $F_e=qE$ donde $E$ es el campo eléctrico y operando se obtiene que
+
+\begin{equation}
+    \begin{split}
+        qE=6\pi R\mu v_a + \frac{4}{3}\pi R^3(\rho_{ac}-\rho_a)
+    \end{split}
+\end{equation}
+
+utilizando la ecuación que relaciona la fuerza de fricción con la fuerza de la gravedad y de flotabilidad, además de remplazar el campo electrico por su expresión en un capacitor $E=\frac{V}{d}$ se llega a que la expresión para la carga en la gota es:
+
+\begin{equation}
+    \begin{split}
+        q=\frac{6\pi \mu d}{V}\sqrt{\frac{9\mu v_c}{2g(\rho_{ac}-\rho_a)}}(v_a-v_c)
+    \end{split}
+\end{equation}i
+
+Por último, sabemos que la carga está cuantizada y debe ser múltiplo de un valor $e^-$ en dónde $n$ es el número de electrones en la gota y se cumple la relación
+
+\begin{equation}
+    q=ne^-
+\end{equation}
+
+Realizando suficientes medidas de q y sacando su mínimo común divisor, se puede llegar al valor de $e^-$
+
