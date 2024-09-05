@@ -1,4 +1,90 @@
-En el experimento de Millikan se aprecian una serie de fenómenos asociados al comportamiento de los fluidos además de la electricidad y magnetismo; en el montaje se encuentra una gota de aceite de una densidad $\rho_{ac}$ que se encuentra en caída donde alcanza una velocidad terminal $v_c$ gracias a las fuerzas de fricción que el aire con densidad $\rho_a$ le ofrece a esta; luego se le aplica una diferencia de potencial $V$ a unas placas paralelas de distancia $d$ en la región inferior y posterior de la gota teniendo una polaridad positiva en la placa superior. En el primer intervalo de tiempo se puede realizar un diagrama de cuerpo libre de la gota de aceite.\\
+\documentclass[journal, table]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
+\usepackage[sorting=none]{biblatex} 
+\bibliography{ref.bib}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb, mathtools}
+\usepackage{hyperref, url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr, last page}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[affil-sl]{authblk}
+\usepackage{anyfontsize}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{tabularx, ragged2e, booktabs}
+\usepackage{siunitx}
+\usepackage[spanish]{cleveref}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\AtBeginDocument{\decimalpoint}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\setkeys{Gin}{width=0.8\linewidth}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdftitle={Lab - JLBA}
+}
+\urlstyle{same}
+\sisetup{separate-uncertainty}
+
+\begin{document}
+
+\title{\textbf{} \\
+    \small{}}
+
+\author[*]{Laura Herrera
+    \thanks{Laura Herrera: 20212107011}}
+\author[*]{Bryan Martínez
+    \thanks{Bryan Martínez: 20212107008}}
+\author[*]{Julian Avila
+    \thanks{Julian Avila: 20212107030}}
+\author[*]{Juan Acuña
+    \thanks{Juan Acuña: 20212107034}}
+
+
+\affil[*]{Proyecto Curricular de Fisica\\ Universidad Distrital Francisco José de Caldas}
+
+\markboth{}
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+\maketitle
+
+\selectlanguage{english}
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\selectlanguage{spanish}
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\section{Objetivos}
+\begin{itemize}
+    \item Calcular la carga del electrón
+    \item Determinar la velocidad de subida y bajada de las gotas de aceite
+    \item Determinar la carga y radio de una gota de aceite ionizada
+\end{itemize}
+
+\section{Marco teórico}
+
+Entre las fuerzas ejercidas a la gota de aceite se encuentran la fuerza gravitacional $\Vec{F}_g$, la fuerza asociada al empuje o flotabilidad descrito por el principio de Arquimedes $\Vec{F}_E$ y la fuerza de fricción generada por el aire $\Vec{F}_d$ descrito por la ley de Stokes.\\
 
 \begin{figure}
     \centering
@@ -7,14 +93,12 @@ En el experimento de Millikan se aprecian una serie de fenómenos asociados al c
     \label{fig:enter-label}
 \end{figure}
 
-Entre las fuerzas ejercidas a la gota de aceite se encuentran la fuerza gravitacional $\Vec{F_g}$, la fuerza asociada al empuje o flotabilidad descrito por el principio de Arquimedes $\Vec{F_E}$ y la fuerza de fricción generada por el aire $\Vec{F_d}$ descrito por la ley de Stokes.\\
-
 Inicialmente la gota es acelerada en dirección a la tierra pero prontamente llega a una velocidad terminal, esto indica un equilibrio de fuerzas.
 
 \begin{equation}
     \begin{split}
         \sum \Vec{F}=0\\
-        \lvert \Vec{F_d}\rvert + \lvert\Vec{F_E}\rvert + \lvert \Vec{F_g}\rvert =0
+        \lvert \Vec{F}_d\rvert + \lvert\Vec{F}_E\rvert + \lvert \Vec{F}_g\rvert =0
     \end{split}
 \end{equation}
 
@@ -22,24 +106,24 @@ La fuerza de la gravedad, flotación y fricción se describe respectivamente de 
 
 \begin{equation}
     \begin{split}
-        \Vec{F_g}=m\Vec{g}\\
-        \Vec{F_E}=-\rho_a \Vec{g}V_{ac}\\
-        \Vec{F_d}=-6\pi R\mu \Vec{v_c}
+        \Vec{F}_g=m\Vec{g}\\
+        \Vec{F}_E=-\rho_a \Vec{g}V_{ac}\\
+        \Vec{F}_d=-6\pi r\mu \Vec{v}_c
     \end{split}
 \end{equation}
 
 Tomando en cuenta únicamente las magnitudes y remplazando se encuentra que:
 
 \begin{equation}
-    6\pi R\mu v_c=mg-\rho_a \Vec{g}V_{ac}
+    6\pi r\mu v_c=mg-\rho_a \Vec{g}V_{ac}
 \end{equation}
 
-Debido a que no se mide la masa de la gota, se dejará el volumen $V_{ac}$ y la masa $m$ en términos de su radio $R$ utilizando las ecuaciones
+Debido a que no se mide la masa de la gota, se dejará el volumen $V_{ac}$ y la masa $m$ en términos de su radio $r$ utilizando las ecuaciones
 
 \begin{equation}
     \begin{split}
-        V_{ac}=\frac{4}{3}\pi R^3\\
-        m=\frac{4}{3}\pi R^3\rho_{ac}
+        V_{ac}=\frac{4}{3}\pi r^3\\
+        m=\frac{4}{3}\pi r^3\rho_{ac}
     \end{split}
 \end{equation}
 
@@ -47,15 +131,15 @@ Remplazando y operando se obtiene
 
 \begin{equation}
     \begin{split}
-        6\pi R\mu v_c=\frac{4}{3}\pi R^3(\rho_{ac}-\rho_a)g
+        6\pi r\mu v_c=\frac{4}{3}\pi r^3(\rho_{ac}-\rho_a)g
     \end{split}
 \end{equation}
 
-de la cual se obtiene el valor para $R$
+de la cual se obtiene el valor para $r$
 
 \begin{equation}
     \begin{split}
-        R=\sqrt{\frac{9\mu v_c}{2g(\rho_{ac}-\rho_a)}}
+        r=\sqrt{\frac{9\mu v_c}{2g(\rho_{ac}-\rho_a)}}
     \end{split}
 \end{equation}
 
@@ -72,7 +156,7 @@ Las ecuaciones para el diagrama de cuerpo libre se ve tal que
 
 \begin{equation}
     \begin{split}
-        \lvert\Vec{F}_E\rvert + \lvert \Vec{F_e}\rvert + \lvert \Vec{F_g}\rvert+\lvert \Vec{F_d}\rvert =0
+        \lvert\Vec{F}_E\rvert + \lvert \Vec{F}_e\rvert + \lvert \Vec{F}_g\rvert+\lvert \Vec{F}_d\rvert =0
     \end{split}
 \end{equation}
 
@@ -80,7 +164,7 @@ Nuevamente se utilizan solo sus magnitudes, remplazando $F_e=qE$ donde $E$ es el
 
 \begin{equation}
     \begin{split}
-        qE=6\pi R\mu v_a + \frac{4}{3}\pi R^3(\rho_{ac}-\rho_a)
+        qE=6\pi r\mu v_a + \frac{4}{3}\pi r^3(\rho_{ac}-\rho_a)
     \end{split}
 \end{equation}
 
@@ -99,4 +183,12 @@ Por último, sabemos que la carga está cuantizada y debe ser múltiplo de un va
 \end{equation}
 
 Realizando suficientes medidas de q y sacando su mínimo común divisor, se puede llegar al valor de $e^-$
+
+\section{Resultados y Análisis}
+
+
+\section{Conclusiones}
+
+\printbibliography
+\end{document}
 
