@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx, subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=1, transform shape]
+	%\draw [help lines, blue] (-10, -10) grid (10, 10);
+
+	% Coordinate definition
+	\coordinate (drop_center) at (0, 0) {};
+	\coordinate (left_x) at ($(drop_center) + (-5.0, 0)$);
+	\coordinate (right_x) at ($(drop_center) + (5.0, 0)$);
+	\coordinate (above_y) at ($(drop_center) + (0.0, 5.0)$);
+	\coordinate (below_y) at ($(drop_center) - (0.0, 5.0)$);
+
+	% Axis
+	\draw[thick] (drop_center) circle (1.5);
+	\node[right, font={\huge}] at (right_x) {$x$};
+	\draw[thick, -Stealth] (left_x) -- (right_x);
+	\node[above, font={\huge}] at (above_y) {$y$};
+	\draw[thick, -Stealth] (below_y) -- (above_y);
+
+	\draw[thick] (drop_center) circle (1.5);
+
+	\draw[thick, color=Plum, -Stealth] (drop_center) -- ++(0.0, 2.0) node[right] (F_b) {$\vec{F}_b$};
+	\draw[thick, color=PineGreen, -Stealth] ($(drop_center) + (0.0, 2.0)$) -- ++(0.0, 2.0) node[right] {$\vec{F}_d$};
+	\draw[thick, color=Peach, -Stealth] (drop_center) -- ++(0.0, -2.0) node[right] {$\vec{W}$};
+\end{tikzpicture}
+\end{document}
+
