@@ -19,13 +19,8 @@
 \usepackage{tabularx, ragged2e, booktabs}
 \usepackage{siunitx}
 \usepackage[spanish]{cleveref}
-\usepackage{multirow}
-\usepackage{adjustbox}
 \AtBeginDocument{\decimalpoint}
-\usepackage{caption}
-\usepackage{subcaption}
 
-\setkeys{Gin}{width=0.8\linewidth}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -83,15 +78,15 @@
 \end{itemize}
 
 \section{Marco teórico}
-\include{./marco-teorico.tex}
+\input{./marco-teorico.tex}
 
 \section{Materiales y métodos}
-\include{./materiales-y-metodos.tex}
+\input{./materiales-y-metodos.tex}
 
 \section{Resultados y Análisis}
-\include{./results-analysis.tex}
+\input{./results-analysis.tex}
 
 \section{Conclusiones}
 
-\printbibliography
+%\printbibliography
 \end{document}
