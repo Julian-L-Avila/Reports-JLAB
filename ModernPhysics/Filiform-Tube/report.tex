@@ -1,7 +1,7 @@
 \documentclass[journal, table]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage[english, spanish]{babel}
-\usepackage[sorting=none]{biblatex}
+\usepackage[sorting=none]{biblatex} 
 \bibliography{ref.bib}
 
 \usepackage{amsmath, amsfonts, amsthm, amssymb, mathtools}
@@ -19,8 +19,13 @@
 \usepackage{tabularx, ragged2e, booktabs}
 \usepackage{siunitx}
 \usepackage[spanish]{cleveref}
+\usepackage{multirow}
+\usepackage{adjustbox}
 \AtBeginDocument{\decimalpoint}
+\usepackage{caption}
+\usepackage{subcaption}
 
+\setkeys{Gin}{width=0.8\linewidth}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -55,18 +60,15 @@
 \include{./resumen.tex}
 
 \section{Objetivos}
-\input{./objectives.tex}
+\include{./objetives.tex}
 
 \section{Marco teórico}
-\input{./marco-teorico.tex}
-
-\section{Materiales y métodos}
-\input{./materiales-y-metodos.tex}
+\include{./marco-teorico.tex}
 
 \section{Resultados y Análisis}
-\input{./results-analysis.tex}
+
 
 \section{Conclusiones}
 
-%\printbibliography
+\printbibliography
 \end{document}
