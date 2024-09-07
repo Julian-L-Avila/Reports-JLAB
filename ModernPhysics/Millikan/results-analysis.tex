@@ -1,5 +1,6 @@
-A partir del montaje experimental descrito y utilizando la herramienta Tracker
-Video, se obtuvo una serie de datos de posición en función del tiempo, como se
+A partir del montaje experimental descrito y utilizando la herramienta
+\emph{Tracker Video}, se obtuvo una serie de datos de posición en función del
+tiempo, como se
 muestra en la \cref{fig:position}.
 Cada gráfica corresponde a una gota diferente, y en ellas se observan los
 instantes de ascenso y descenso.
@@ -10,7 +11,7 @@ atribuye a las variaciones en la masa y la carga total de cada gota.
 	\centering
 	\includegraphics[width=0.8\linewidth]{./images/positon-drop-tracker-00.png}
 	\includegraphics[width=0.8\linewidth]{./images/positon-drop-tracker-01.png}
-	\caption{Posiciones a lo largo del tiempo, obtenidas con Tracker Video.}
+	\caption{Posiciones a lo largo del tiempo, obtenidas con \emph{Tracker Video}.}
 	\label{fig:position}
 \end{figure*}
 
@@ -21,12 +22,12 @@ Este cálculo asume que la velocidad es constante durante el trayecto, lo cual,
 aunque no es estrictamente cierto, las gráficas sugieren que se aproxima a
 dicha condición.
 
-Al realizar el análisis en Tracker para un total de 20 gotas, las velocidades
-obtenidas se presentan en la \cref{tab:data-drops}.
+Al realizar el análisis en \emph{Tracker Video} para un total de 20 gotas,
+las velocidades obtenidas se presentan en la \cref{tab:data-drops}.
 En esta tabla, además, se muestran los valores calculados para el radio y la
 carga de cada gota, según las \cref{eq:radius,eq:charge}.
 
-\begin{table*}[tb!]
+\begin{table*}[t]
 	\centering
 	\rowcolors{2}{white}{gray!25}
 	\begin{tabular}{S[table-format=2.0(1)]|S[table-format=1.2e-1]|S[table-format=1.2e-1]|S[table-format=1.2e-1]|S[table-format=1.2e-2]}
@@ -67,7 +68,7 @@ de la cámara y el microscopio utilizados, mientras que gotas de mayor tamaño n
 mostraron una velocidad de ascenso significativa.
 
 En cuanto a la carga, la mayoría de los valores oscila entre \(10^{-16}\) y
-\(10^{-17}\)coulombs, lo que indica que las gotas estudiadas presentaron un
+\(10^{-17}\) coulombs, lo que indica que las gotas estudiadas presentaron un
 grado de ionización similar.
 La \cref{fig:plot-radius-charge} presenta gráficamente la relación entre la
 carga y el radio, excluyendo un valor atípico para facilitar la visualización
@@ -76,7 +77,7 @@ Basándonos en el trabajo de Millikan, es posible apreciar cómo los datos se
 agrupan en niveles discretos o líneas de valor constante, una tendencia que
 sería más clara con un número mayor de datos.
 
-\begin{figure}[htbp!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{./images/plot-radius-charge.pdf}
 	\caption{Carga con respecto radio de la gota.}
@@ -100,4 +101,4 @@ al valor aceptado en la literatura \(e^{-} = \qty{1.602e-19}{C}\).
 Esta discrepancia puede deberse a diversas suposiciones en el experimento, como
 asumir que las densidades del aire y el aceite son constantes, al error numérico
 introducido por el código computacional utilizado, y a la incertidumbre generada
-al discretizar la posición en píxeles mediante el uso de Tracker.
+al discretizar la posición en píxeles mediante el uso de \emph{Tracker Video}.
