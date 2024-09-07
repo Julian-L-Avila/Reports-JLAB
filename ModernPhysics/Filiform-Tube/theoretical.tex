@@ -33,7 +33,9 @@ Por lo que reemplazando se tiene que:
   d\mathbf{B}(\mathbf{r}) = \frac{\mu_{0}I}{4\pi} \frac{(a d\phi z \hat{\rho}) + (a^{2}d\phi \hat{z})}{(z^{2}+a^{2})^{3/2}}
 \end{equation}
 
-Al integrar se obtiene el valor de $\mathbf{B}(\mathbf{r})$ y por la simetría del problema se evidencia que $\mathbf{B}(\mathbf{r}) = B(r)\hat{z}$, por lo que se obtiene:
+Al integrar se obtiene el valor de $\mathbf{B}(\mathbf{r})$ y por la simetría
+del problema se evidencia que $\mathbf{B}(\mathbf{r}) = B(r)\hat{z}$,
+por lo que se obtiene:
 \begin{equation}
   \mathbf{B}(\mathbf{r}) = \frac{\mu_{0}I}{4 \pi} \frac{a^{2}}{(z^{2}+a^{2})^{3/2}} \hat{e_{z}} \int _{0}^{2 \pi} d\phi
 \end{equation}
@@ -73,15 +75,56 @@ se encuentran localizadas en $z = -d/2$ y $z = +d/2$.
 \end{aligned}
 \end{equation}
 
-Para el caso del montaje experimental, la bobinas tienen una separación igual a
-su radio, por lo que $d=a$. Ademas, el has de electrones se hubica en el centro
-de las bobinas, es decir, z=0. Teniendo en cuenta todas esta consideraciones,
-se llega a que el campo magnetico producido por las bobinas en el haz de
-electrones es: \cite{boix_practica_2}
+Para el caso del montaje experimental, las bobinas tienen una separación igual a
+su radio, por lo que \( d = a \).
+Además, el haz de electrones se ubica en el centro de las bobinas, es decir,
+\( z = 0 \). Teniendo en cuenta todas estas consideraciones, se llega a que el
+campo magnético producido por las bobinas en el haz de electrones es
+\cite{boix_practica_2}:
 
 \begin{equation}
-  \mathbf{B}_{z}(\rho=0,z=0)= \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
-  \label{Campo_magnetico_enHaz}
+    \mathbf{B}_{z}(\rho=0, z=0) = \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
+    \label{eq:Campo_magnetico_enHaz}
 \end{equation}
 
-Donde R=a.
+\begin{equation}
+    \mathbf{B}(\mathbf{r}) = \frac{\mu_{0}I}{2} \frac{a^{2}}{(z^{2}+a^{2})^{3/2}} \hat{e}_{z}
+    \label{eq:Campo_magnetico_espira}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[a]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/dos espiras.pdf}
+        \caption{Corriente en dos espiras}
+        \label{fig:I_en_dos_espiras}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/Campo de bobinas.pdf}
+        \caption{Campo magnético entre dos espiras circulares}
+        \label{fig:CM_dos_espiras}
+    \end{subfigure}
+    \caption{Dos espiras circulares}
+    \label{fig:dos_espiras}
+\end{figure}
+
+El campo magnético $\mathbf{B}$ producido por dos espiras, como se observa en la \cref{fig:dos_espiras}, donde circula una corriente estática $I$ en cada una de las espiras, se calcula sumando dos componentes del vector $\mathbf{B}$ de acuerdo al resultado de la \cref{eq:Campo_magnetico_espira}. Como resultado, se obtendrán dos términos iguales, considerando que las espiras se encuentran localizadas en $z = -d/2$ y $z = +d/2$.
+
+\begin{equation}
+\begin{aligned}
+    \mathbf{B}_{z}(\rho=0,z) &= \frac{\mu_{0} I a^{2}}{2} \left[ \frac{1}{\left((z-\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right.\\
+    &\quad \left.+ \frac{1}{\left((z+\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right] \hat{e}_{z}
+    \label{Campo_magnetico_2espiras}
+\end{aligned}
+\end{equation}
+
+Para el caso del montaje experimental, la bobinas tienen una separación igual a su radio, por lo que $d=a$. Ademas, el has de electrones
+se hubica en el centro de las bobinas, es decir, z=0. Teniendo en cuenta todas esta consideraciones, se llega a que el campo magnetico producido por las bobinas en el haz de electrones es: \cite{{boix_practica_2}
+
+\begin{equation}
+    \mathbf{B}_{z}(\rho=0,z=0)= \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
+    \label{Campo_magnetico_enHaz}
+\end{equation}
