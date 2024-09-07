@@ -68,11 +68,11 @@ Como resultado, se obtendrán dos términos iguales, considerando que las espira
 se encuentran localizadas en $z = -d/2$ y $z = +d/2$.
 
 \begin{equation}
-\begin{aligned}
-  \mathbf{B}_{z}(\rho=0,z) &= \frac{\mu_{0} I a^{2}}{2} \left[ \frac{1}{\left((z-\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right.\\
-                           &\quad \left.+ \frac{1}{\left((z+\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right] \hat{e}_{z}
-  \label{Campo_magnetico_2espiras}
-\end{aligned}
+  \begin{aligned}
+    \mathbf{B}_{z}(\rho=0,z) &= \frac{\mu_{0} I a^{2}}{2} \left[ \frac{1}{\left((z-\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right.\\
+                             &\quad \left.+ \frac{1}{\left((z+\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right] \hat{e}_{z}
+                             \label{Campo_magnetico_2espiras}
+  \end{aligned}
 \end{equation}
 
 Para el caso del montaje experimental, las bobinas tienen una separación igual a
@@ -83,48 +83,58 @@ campo magnético producido por las bobinas en el haz de electrones es
 \cite{boix_practica_2}:
 
 \begin{equation}
-    \mathbf{B}_{z}(\rho=0, z=0) = \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
-    \label{eq:Campo_magnetico_enHaz}
+  \mathbf{B}_{z}(\rho=0, z=0) = \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
+  \label{eq:Campo_magnetico_enHaz}
 \end{equation}
 
 \begin{equation}
-    \mathbf{B}(\mathbf{r}) = \frac{\mu_{0}I}{2} \frac{a^{2}}{(z^{2}+a^{2})^{3/2}} \hat{e}_{z}
-    \label{eq:Campo_magnetico_espira}
+  \mathbf{B}(\mathbf{r}) = \frac{\mu_{0}I}{2} \frac{a^{2}}{(z^{2}+a^{2})^{3/2}} \hat{e}_{z}
+  \label{eq:Campo_magnetico_espira}
 \end{equation}
+
+donde \( R = a \).
 
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[a]{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.6\textwidth]{images/dos espiras.pdf}
-        \caption{Corriente en dos espiras}
-        \label{fig:I_en_dos_espiras}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.6\textwidth]{images/Campo de bobinas.pdf}
-        \caption{Campo magnético entre dos espiras circulares}
-        \label{fig:CM_dos_espiras}
-    \end{subfigure}
-    \caption{Dos espiras circulares}
-    \label{fig:dos_espiras}
+  \centering
+  \includegraphics[width=0.8\linewidth]{./images/electron-path.pdf}
+  \caption{Trayectoria del haz de electrones}
+  \label{fig:haz_elelctrones}
 \end{figure}
 
-El campo magnético $\mathbf{B}$ producido por dos espiras, como se observa en la \cref{fig:dos_espiras}, donde circula una corriente estática $I$ en cada una de las espiras, se calcula sumando dos componentes del vector $\mathbf{B}$ de acuerdo al resultado de la \cref{eq:Campo_magnetico_espira}. Como resultado, se obtendrán dos términos iguales, considerando que las espiras se encuentran localizadas en $z = -d/2$ y $z = +d/2$.
+Teniendo ya la expresión para el campo magnético \( B \) que actúa sobre el haz de electrones, y dado que el electrón, con carga \( e \), se mueve perpendicularmente al campo magnético, está sujeto a la fuerza de Lorentz, cuya magnitud está dada por:
 
 \begin{equation}
-\begin{aligned}
-    \mathbf{B}_{z}(\rho=0,z) &= \frac{\mu_{0} I a^{2}}{2} \left[ \frac{1}{\left((z-\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right.\\
-    &\quad \left.+ \frac{1}{\left((z+\frac{d}{2})^{2} + a^{2}\right)^{3/2}} \right] \hat{e}_{z}
-    \label{Campo_magnetico_2espiras}
-\end{aligned}
+  F = e v B
+  \label{eq:FuerzaLorentz}
 \end{equation}
 
-Para el caso del montaje experimental, la bobinas tienen una separación igual a su radio, por lo que $d=a$. Ademas, el has de electrones
-se hubica en el centro de las bobinas, es decir, z=0. Teniendo en cuenta todas esta consideraciones, se llega a que el campo magnetico producido por las bobinas en el haz de electrones es: \cite{{boix_practica_2}
+Debido a que la fuerza de Lorentz es perpendicular a la velocidad y al campo magnético, genera un movimiento circular en el haz de electrones, por lo que también actúa como una fuerza centrípeta:
 
 \begin{equation}
-    \mathbf{B}_{z}(\rho=0,z=0)= \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
-    \label{Campo_magnetico_enHaz}
+  F = m_{e} \frac{v^{2}}{r}
+  \label{eq:Fuerzacentripeta}
+\end{equation}
+
+Igualando las ecuaciones \cref{eq:FuerzaLorentz,eq:Fuerzacentripeta}, se obtiene una relación carga-masa en función de la velocidad, el campo magnético y el radio del haz de electrones:
+
+\begin{equation}
+  \frac{e}{m_{e}} = \frac{v}{r B}
+  \label{eq:Primera_carga-masa}
+\end{equation}
+
+Sin embargo, la velocidad con la que viaja el haz de electrones es desconocida. Para determinarla, se recurre a la conservación de la energía. En el experimento, los electrones son acelerados en un tubo de rayo electrónico filiforme por una diferencia de potencial \( U \), de modo que la energía eléctrica se transforma en energía cinética:
+
+\begin{equation}
+  \begin{aligned}
+    e U &= \frac{1}{2} m_{e} v^{2} \\
+    \Rightarrow \frac{e}{m_{e}} &= \frac{v^{2}}{2 U}
+  \end{aligned}
+  \label{eq:Segunda_carga-masa}
+\end{equation}
+
+Igualando las ecuaciones \cref{eq:Primera_carga-masa,eq:Segunda_carga-masa}, se obtiene que la velocidad es \( v = \frac{2 U}{r B} \), y finalmente, se llega a que la carga específica del electrón es: \cite{leybold_experimentos}
+
+\begin{equation}
+  \frac{e}{m_{e}} = \frac{2 U}{(r B)^{2}}
+  \label{eq:carga-masa}
 \end{equation}
