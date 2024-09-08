@@ -1,7 +1,7 @@
 \documentclass[journal, table]{IEEEtran}
 \usepackage[utf8]{inputenc}
 \usepackage[english, spanish]{babel}
-\usepackage[sorting=none]{biblatex} 
+\usepackage[sorting=none]{biblatex}
 \bibliography{ref.bib}
 
 \usepackage{amsmath, amsfonts, amsthm, amssymb, mathtools}
@@ -19,26 +19,20 @@
 \usepackage{tabularx, ragged2e, booktabs}
 \usepackage{siunitx}
 \usepackage[spanish]{cleveref}
-\usepackage{multirow}
-\usepackage{adjustbox}
 \AtBeginDocument{\decimalpoint}
-\usepackage{caption}
-\usepackage{subcaption}
 
-\setkeys{Gin}{width=0.8\linewidth}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
     urlcolor=blue,
-    pdftitle={Lab - JLBA}
+    pdftitle={Filiform Lab - JLBA}
 }
 \urlstyle{same}
 \sisetup{separate-uncertainty}
 
 \begin{document}
 
-\title{\textbf{} \\
-    \small{}}
+\title{}
 
 \author[*]{Laura Herrera
     \thanks{Laura Herrera: 20212107011}}
@@ -50,25 +44,30 @@
     \thanks{Juan Acuña: 20212107034}}
 
 
-\affil[*]{Proyecto Curricular de Fisica\\ Universidad Distrital Francisco José de Caldas}
+\affil[*]{Programa Académico de Fisica\\
+Universidad Distrital Francisco José de Caldas}
 
 \markboth{}
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 
 \maketitle
 
-\include{./resumen.tex}
+\input{./resumen.tex}
 
 \section{Objetivos}
-\include{./objetives.tex}
+\input{./objectives.tex}
 
 \section{Marco teórico}
-\include{./marco-teorico.tex}
+\input{./theoretical.tex}
+
+\section{Materiales y métodos}
+\input{./materials.tex}
 
 \section{Resultados y Análisis}
-
+\input{./results-analysis.tex}
 
 \section{Conclusiones}
+\input{./conclusion.tex}
 
 \printbibliography
 \end{document}
