@@ -1,32 +1,35 @@
-Para determinar la carga especifica del electrón, se pone a un electrón que se
-mueve a una velocidad $v$ bajo el campo magnético generado por un par de Bobinas
-de Helmholtz, dichas bobinas representan una de las configuraciones más simples
-para generar un campo magnético relativamente constante.
-Estas bobinas consisten en dos bobinas circulares coaxiales de igual radio,
-el cual es igual a la distancia entre los planos de las bobinas.
+Para determinar la carga especifica del electrón, se emplea un haz de
+electrones que se desplaza con una velocidad \(v\) perpendicular a un campo
+magnético generado por un par de Bobinas de Helmholtz.
+Estas bobinas representan la configuración más simple capaz de generar un campo
+magnético prácticamente uniforme y constante.
+La configuración consiste en dos bobinas circulares coaxiales de igual radio,
+con una separación entre sus planos igual al radio de las mismas.
 
-\begin{figure}[H]
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width=0.8\linewidth]{./images/loop-field.pdf}
   \caption{Campo magnético de una espira.}
-  \label{fig:una_espira}
+  \label{fig:loop}
 \end{figure}
 
 Para calcular el campo magnético generado por estas bobinas, primero se
 determina el campo producido por una de ellas.
 En este caso, se considera una espira por la que circula una corriente eléctrica
-constante $I$ en el tiempo.
-Partimos de la expresión diferencial de la ley de Biot-Savart:
+constante \(I\) en el tiempo.
+Partimos de la expresión diferencial de la ley de Biot-Savart \cite{jackson-1998}:
 
 \begin{equation}\label{eq:Biot-Savart}
   d\mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4 \pi} \frac{d\mathbf{l} \times \mathbf{R}}{R^{3}}
 \end{equation}
 
 Donde:
-$d\mathbf{l}=a d\phi \hat{\phi}$
-$\mathbf{R}=\mathbf{r}-\mathbf{r'}$
-$\mathbf{r}=z\hat{e_{z}}-a\hat{e_{\rho}}$
-$R=\sqrt{z^{2}+a^{2}}$
+\begin{itemize}
+  \item $d\mathbf{l}=a d\phi \hat{\phi}$
+  \item $\mathbf{R}=\mathbf{r}-\mathbf{r'}$
+  \item $\mathbf{r}=z\hat{e_{z}}-a\hat{e_{\rho}}$
+  \item $R=\sqrt{z^{2}+a^{2}}$
+\end{itemize}
 
 Por lo que reemplazando se tiene que:
 \begin{equation}
@@ -46,26 +49,26 @@ Lo que da como resultado:
   \label{eq:Campo_magnetico_espira}
 \end{equation}
 
-\begin{figure}[H]
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width=0.6\linewidth]{./images/two-loops.pdf}
-  \caption{Corriente en dos espiras}
-  \label{fig:I_en_dos_espiras}
+  \caption{Corriente en dos espiras.}
+  \label{fig:two-loops}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width=0.6\linewidth]{./images/coils-field.pdf}
-  \caption{Campo magnético entre dos espiras circulares}
-  \label{fig:CM_dos_espiras}
+  \caption{Campo magnético entre dos espiras circulares.}
+  \label{fig:coils-field}
 \end{figure}
 
 El campo magnético $\mathbf{B}$ producido por dos espiras, como se observa en la
-\cref{fig:dos_espiras}, donde circula una corriente estática $I$ en cada una de
+\cref{fig:two-loops}, donde circula una corriente estática $I$ en cada una de
 las espiras, se calcula sumando dos componentes del vector $\mathbf{B}$ de
 acuerdo al resultado de la \cref{eq:Campo_magnetico_espira}.
 Como resultado, se obtendrán dos términos iguales, considerando que las espiras
-se encuentran localizadas en $z = -d/2$ y $z = +d/2$.
+se encuentran localizadas en \(z = -d/2\) y \(z = d/2\).
 
 \begin{equation}
   \begin{aligned}
@@ -79,8 +82,7 @@ Para el caso del montaje experimental, las bobinas tienen una separación igual 
 su radio, por lo que \( d = a \).
 Además, el haz de electrones se ubica en el centro de las bobinas, es decir,
 \( z = 0 \). Teniendo en cuenta todas estas consideraciones, se llega a que el
-campo magnético producido por las bobinas en el haz de electrones es
-\cite{boix_practica_2}:
+campo magnético producido por las bobinas en el haz de electrones es:
 
 \begin{equation}
   \mathbf{B}_{z}(\rho=0, z=0) = \frac{8 n \mu_{0} I}{5 \sqrt{5} R}
@@ -89,40 +91,48 @@ campo magnético producido por las bobinas en el haz de electrones es
 
 \begin{equation}
   \mathbf{B}(\mathbf{r}) = \frac{\mu_{0}I}{2} \frac{a^{2}}{(z^{2}+a^{2})^{3/2}} \hat{e}_{z}
-  \label{eq:Campo_magnetico_espira}
 \end{equation}
 
 donde \( R = a \).
 
-\begin{figure}[H]
+\begin{figure}[htbp!]
   \centering
   \includegraphics[width=0.8\linewidth]{./images/electron-path.pdf}
   \caption{Trayectoria del haz de electrones}
   \label{fig:haz_elelctrones}
 \end{figure}
 
-Teniendo ya la expresión para el campo magnético \( B \) que actúa sobre el haz de electrones, y dado que el electrón, con carga \( e \), se mueve perpendicularmente al campo magnético, está sujeto a la fuerza de Lorentz, cuya magnitud está dada por:
+Dado que el electrón, con carga \( e \), se mueve perpendicularmente al campo
+magnético, está sujeto a la fuerza de Lorentz, cuya magnitud está dada por:
 
 \begin{equation}
   F = e v B
   \label{eq:FuerzaLorentz}
 \end{equation}
 
-Debido a que la fuerza de Lorentz es perpendicular a la velocidad y al campo magnético, genera un movimiento circular en el haz de electrones, por lo que también actúa como una fuerza centrípeta:
+Debido a que la fuerza de Lorentz es perpendicular a la velocidad y al campo
+magnético, genera un movimiento circular en el haz de electrones, por lo que
+también actúa como una fuerza centrípeta:
 
 \begin{equation}
   F = m_{e} \frac{v^{2}}{r}
   \label{eq:Fuerzacentripeta}
 \end{equation}
 
-Igualando las ecuaciones \cref{eq:FuerzaLorentz,eq:Fuerzacentripeta}, se obtiene una relación carga-masa en función de la velocidad, el campo magnético y el radio del haz de electrones:
+Igualando las \cref{eq:FuerzaLorentz,eq:Fuerzacentripeta}, se obtiene una
+relación carga-masa en función de la velocidad, el campo magnético y el radio
+del haz de electrones:
 
 \begin{equation}
   \frac{e}{m_{e}} = \frac{v}{r B}
   \label{eq:Primera_carga-masa}
 \end{equation}
 
-Sin embargo, la velocidad con la que viaja el haz de electrones es desconocida. Para determinarla, se recurre a la conservación de la energía. En el experimento, los electrones son acelerados en un tubo de rayo electrónico filiforme por una diferencia de potencial \( U \), de modo que la energía eléctrica se transforma en energía cinética:
+Sin embargo, la velocidad con la que viaja el haz de electrones es desconocida.
+Para determinarla, se recurre a la conservación de la energía.
+En el experimento, los electrones son acelerados en un tubo de rayo electrónico
+filiforme por una diferencia de potencial \( U \), de modo que la energía
+eléctrica se transforma en energía cinética:
 
 \begin{equation}
   \begin{aligned}
@@ -132,7 +142,9 @@ Sin embargo, la velocidad con la que viaja el haz de electrones es desconocida. 
   \label{eq:Segunda_carga-masa}
 \end{equation}
 
-Igualando las ecuaciones \cref{eq:Primera_carga-masa,eq:Segunda_carga-masa}, se obtiene que la velocidad es \( v = \frac{2 U}{r B} \), y finalmente, se llega a que la carga específica del electrón es: \cite{leybold_experimentos}
+Igualando las ecuaciones \cref{eq:Primera_carga-masa,eq:Segunda_carga-masa},
+se obtiene que la velocidad es \( v = \frac{2 U}{r B} \), y finalmente,
+se llega a que la carga específica del electrón es:
 
 \begin{equation}
   \frac{e}{m_{e}} = \frac{2 U}{(r B)^{2}}
