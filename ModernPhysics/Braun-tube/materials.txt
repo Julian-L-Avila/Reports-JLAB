@@ -1,0 +1,40 @@
+Para este laboratorio se usaron dos fuentes de voltajes y una fuente de 
+corriente. Una de las fuentes de voltaje se conectó a un multímetro y al cañon 
+de electrones, la otra fuente, se conectó a otro voltímetro y al capacitor 
+encargado de la deflexión, la fuente de corriente se conectó a un amperímetro
+y a las bobinas de Helmholtz. El montaje se puede observar en la 
+\cref{fig:set-up}.
+
+\begin{figure}[htbp!]
+	\centering
+  \includegraphics[width=0.8\linewidth]{./images/}
+  \caption{Montaje experimental.}
+  \label{fig:set-up}
+\end{figure}
+
+Adicionalmente, en una hoja milimetrada se hizo una marca, la cual fue el punto
+de referencia, debajo de este punto se realizaron otras tres marcas a 
+diferentes distancias, como se puede observar en la \cref{fig:marks}, y con 
+ayuda de una regla, se midió el valor de cada una.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.8\linewidth]{./images/}
+  \caption{Marcas hechas en la hoja milimetrada.}
+  \label{fig:marks}
+\end{figure}
+
+Cuando se le suministró un voltaje al cañon de electrones, el haz de 
+electtrones generó en el extremo opuesto del recipiente de vidrio un punto de 
+luz, sobre el cual se colocó el punto de referencia hecho en la hoja 
+milimetrada, de tal forma que las otras tres marcas se encuentren debajo del 
+punto de luz.
+
+Una vez colocada la hoja milimetrada, se le suministró un voltaje al capacitor
+deflector, causando que el punto de luz se desplazara hacia abajo,el voltaje
+que se aplicó fue el suficiente para que el punto de luz coincidiera 
+con una de las tres marcas, una vez que coincidieran, se anotaron ambos valores
+de volta. Después de este paso, se le suministró una corriente a las bobinas,
+la suficiente para que el punto de luz deflectado volviera a coincidir con 
+el punto de referencia, esta corriente también se anotó. Para cada una de las 
+tres marcas se realizó este procedimiento.
