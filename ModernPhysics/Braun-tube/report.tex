@@ -1,0 +1,76 @@
+\documentclass[journal, table]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
+\usepackage[sorting=none]{biblatex}
+\bibliography{ref.bib}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb, mathtools}
+\usepackage{hyperref, url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr, last page}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[affil-sl]{authblk}
+\usepackage{anyfontsize}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{tabularx, ragged2e, booktabs}
+\usepackage{siunitx}
+\usepackage[spanish]{cleveref}
+\AtBeginDocument{\decimalpoint}
+\graphicspath{{./images}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdftitle={Filiform Lab - JLBA}
+}
+\urlstyle{same}
+\sisetup{separate-uncertainty}
+
+\begin{document}
+
+\title{}
+
+\author[*]{Laura Herrera
+    \thanks{Laura Herrera: 20212107011}}
+\author[*]{Bryan Martínez
+    \thanks{Bryan Martínez: 20212107008}}
+\author[*]{Julian Avila
+    \thanks{Julian Avila: 20212107030}}
+\author[*]{Juan Acuña
+    \thanks{Juan Acuña: 20212107034}}
+
+
+\affil[*]{Programa Académico de Fisica\\
+Universidad Distrital Francisco José de Caldas}
+
+\markboth{}
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+\maketitle
+
+\input{./resumen.tex}
+
+\section{Objetivos}
+\input{./objectives.tex}
+
+\section{Marco teórico}
+\input{./theoretical.tex}
+
+\section{Materiales y métodos}
+\input{./materials.tex}
+
+\section{Resultados y Análisis}
+\input{./results.tex}
+
+\section{Conclusiones}
+\input{./conclusion.tex}
+
+\printbibliography
+\nocite{*}
+\end{document}
