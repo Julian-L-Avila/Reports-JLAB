@@ -13,6 +13,7 @@
 \usepackage[affil-sl]{authblk}
 \usepackage{anyfontsize}
 \usepackage{graphicx}
+\usepackage{subfigure}
 \usepackage{csquotes}
 \usepackage{float}
 \usepackage{svg}
@@ -20,19 +21,20 @@
 \usepackage{siunitx}
 \usepackage[spanish]{cleveref}
 \AtBeginDocument{\decimalpoint}
+\graphicspath{{./images}}
 
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
     urlcolor=blue,
-    pdftitle={Millikan Lab - JLBA}
+    pdftitle={Filiform Lab - JLBA}
 }
 \urlstyle{same}
 \sisetup{separate-uncertainty}
 
 \begin{document}
 
-\title{Determinación de la Carga Fundamental del Electrón}
+\title{}
 
 \author[*]{Laura Herrera
     \thanks{Laura Herrera: 20212107011}}
@@ -64,10 +66,11 @@ Universidad Distrital Francisco José de Caldas}
 \input{./materials.tex}
 
 \section{Resultados y Análisis}
-\input{./results-analysis.tex}
+\input{./results.tex}
 
 \section{Conclusiones}
 \input{./conclusion.tex}
 
 \printbibliography
+\nocite{*}
 \end{document}
