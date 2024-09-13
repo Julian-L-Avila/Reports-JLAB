@@ -1,52 +1,48 @@
-Para determinar la carga específica del electrón, en primera instancia,
-acudir a la energía cinética  en dónde $K$ es la energía cinética del electrón
-al ser acelerado, por ello, existen dos expresiones para la misma.
-\begin{equation}\label{eq:kvx}
-  \begin{split}
-    K=\frac{1}{2}m_ev_x^2\\
-    K=eU_a
-  \end{split}
+Para determinar la carga específica del electrón, se aceleran electrones mediante
+una diferencia de potencial, de modo que la energía cinética adquirida es
+equivalente a la energía potencial eléctrica, en concordancia con el principio
+de conservación de la energía.
+Esta relación se expresa en la \cref{eq:electron-energy}.
+\begin{equation}\label{eq:electron-energy}
+  e U_a =\frac{1}{2} m_e v^{2}_{x}
 \end{equation}
 
-Igualando las ecuaciones de \ref{eq:kvx} se llega a la expresión
-\begin{equation}\label{eq:k=k}
-  eU_a=\frac{1}{2}m_ev_x^2
+Donde \(U_a\) es el potencial de aceleración, \(e\) la carga del electrón,
+\(m_e\) su masa y \(v_x\) la velocidad horizontal alcanzada.
+La velocidad horizontal puede despejarse para obtener la
+\cref{eq:velocity-electric}.
+\begin{equation}\label{eq:velocity-electric}
+  v_x = \sqrt{\frac{2 e U_a}{m_e}}
 \end{equation}
 
-Se puede hallar la velocidad de salida de los electrones $v_x$ despejando la
-ecuación \ref{eq:k=k}
-\begin{equation}\label{v=sqrt}
-  v_x=\sqrt{\frac{2eU_a}{m_e}}
+Al aplicar un potencial de deflexión, el electrón adquiere una componente de
+velocidad vertical, lo que provoca un desplazamiento en su posición final sobre
+la pantalla.
+Para contrarrestar dicha deflexión, se aplica un campo magnético.
+
+Cuando la fuerza eléctrica generada por el potencial de deflexión y la fuerza de
+Lorentz debida al campo magnético están en equilibrio, se establece la relación
+de velocidad que se presenta en la \cref{eq:veloctiy-relation}, donde \(U_d\) es
+el potencial de deflexión y \(d\) la distancia entre placas del capacitor.
+\begin{equation*}
+  e \frac{U_d}{d} = e v_x B
+\end{equation*}
+\begin{equation}\label{eq:veloctiy-relation}
+  v_x = \frac{U_d}{Bd}
 \end{equation}
 
-Se activa un campo magnético que equilibra la deflexión del haz de electrones,
-como el campo magnético de inducción  y la velocidad de los electrones están en
-direcciones perpendiculares entre sí.
-La condición para la velocidad es
-\begin{equation}\label{v=E/B}
-  v_x=\frac{E}{B}
-\end{equation}
-
-En donde el valor del campo magnético $B$ en el eje axial  de las bobinas de
-Helmholtz está dado por \cite{jackson-1998}
+El campo magnético, generado por un par de bobinas de Helmholtz,
+puede calcularse utilizando la \cref{eq:magnetic-field} \cite{jackson-1998},
+donde \(n = 240 \) el número de vueltas de las bobinas y \(r = \qty{11.2e-2}{m}\)
+es su radio.
 \begin{equation}\label{eq:magnetic-field}
-  B=\frac{\mu_0IR^2}{2(R^2+z^2)^{\frac{3}{2}}}
+  B = \left( \frac{4}{5} \right)^{\frac{3}{2}} \frac{\mu_0 n I}{R}
 \end{equation}
 
-Se remplazan los términos de \ref{v=E/B} en \ref{v=sqrt} dejando la expresión
-\begin{equation}
-  \frac{E}{B}=\sqrt{\frac{2eU_a}{m_e}}
-\end{equation}
-
-El campo eléctrico $E$ puede ser remplazado por la ecuación $E=\frac{U_D}{d}$
-debido a que es el campo de un capacitor en donde $d$ es la distancia entre las
-placas, dejando la expresión
-\begin{equation}\label{almost e/m}
-  \frac{U_D}{Bd}=\sqrt{\frac{2eU_a}{m_e}}
-\end{equation}
-
-Despejando la ecuación \ref{almost e/m} se llega a la carga específica del
-electrón
+Al combinar las dos expresiones para la velocidad horizontal, dadas por las
+\cref{eq:velocity-electric,eq:veloctiy-relation}, se obtiene la
+\cref{eq:specific-charge},que permite determinar explícitamente la carga
+específica del electrón.
 \begin{equation}\label{eq:specific-charge}
-  \frac{e}{m_e}=\frac{U_D^2}{2u_a}\frac{1}{B^2d^2}
+  \frac{e}{m_e}=\frac{1}{2U_a}\frac{U^2_d}{B^2d^2}
 \end{equation}
