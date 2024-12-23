@@ -1,0 +1,71 @@
+\documentclass[journal, table]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
+\usepackage[sorting=none]{biblatex}
+\bibliography{ref.bib}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb, mathtools}
+\usepackage{hyperref, url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr, last page}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[affil-sl]{authblk}
+\usepackage{anyfontsize}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{tabularx, ragged2e, booktabs}
+\usepackage{siunitx}
+\usepackage[spanish]{cleveref}
+\AtBeginDocument{\decimalpoint}
+\graphicspath{{./Images}}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  pdftitle={System identification - JLB}
+}
+\urlstyle{same}
+\sisetup{separate-uncertainty}
+
+\begin{document}
+
+\title{Identificación de Sistemas Dinámicos \\
+  \small{Horno Eléctrico}}
+
+\author[*]{Julian Avila
+  \thanks{Julian Avila: 20212107030}}
+\author[*]{Laura Herrera
+  \thanks{Laura Herrera: 20212107011}}
+\author[*]{Bryan Martínez
+  \thanks{Bryan Martínez: 20212107008}}
+
+\affil[*]{Programa Académico de Física\\
+Universidad Distrital Francisco José de Caldas}
+
+\markboth{}
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+\maketitle
+
+\input{./Sections/abstract.tex}
+
+\section{Objetivos}
+\input{./Sections/objectives.tex}
+
+\section{Metodología}
+\input{./Sections/methods.tex}
+
+\section{Resultados y Análisis}
+\input{./Sections/results.tex}
+
+\section{Conclusiones}
+\input{./Sections/conclusions.tex}
+
+\printbibliography
+\nocite{*}
+\end{document}
