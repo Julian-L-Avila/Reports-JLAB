@@ -1,0 +1,31 @@
+\subsection{Promedio de puntos}
+
+Los parámetros \(k_p\) y \(T_d\) se determinan a partir de la gráfica de la
+respuesta del sistema. El valor \(A k_p\) corresponde al nivel al que tiende
+la salida, mientras que \(T_d\) representa el tiempo que el sistema tarda en
+responder tras la activación de la entrada en el instante \(b\).
+
+La constante de tiempo se calcula considerando el intervalo posterior a
+\(T_d + b\) necesario para que el sistema alcance porcentajes clave del
+valor final, como \qty{28}{\percent}, \qty{50}{\percent} (vida media),
+\qty{63}{\percent}, \qty{86}{\percent} y \qty{95}{\percent}. Los tiempos
+obtenidos para cada porcentaje se promedian, proporcionando una aproximación
+de la constante característica del sistema.
+
+\subsection{Método de dos puntos (Alfaro \cite{ruiz-2011})}
+
+Este método emplea dos tiempos específicos, \(t_1\) y \(t_2\), que corresponden
+a los instantes en que el sistema alcanza los porcentajes de \qty{25}{\percent}
+y \qty{75}{\percent} del valor final, respectivamente. La ganancia \(k_p\) se
+determina de manera gráfica, mientras que las constantes \(T_p\) y \(T_d\) se
+calculan mediante las expresiones dadas en las
+\cref{eq:Tp-Alfaro,eq:Td-Alfaro}.
+
+\begin{gather}
+  T_p = -0.910 t_1 + 0.910 t_2 \label{eq:Tp-Alfaro} \\
+  T_d = 1.262 t_1 - 0.262 t_2 \label{eq:Td-Alfaro}
+\end{gather}
+
+\subsection{Método de Stark}
+
+\subsection{Método de Jahanmiri y Fallahi \cite{jahanmiri-1997}}
