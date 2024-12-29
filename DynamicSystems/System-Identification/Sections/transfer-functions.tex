@@ -18,7 +18,7 @@ un desplazamiento (offset), este puede compensarse redefiniendo
 \begin{gather}
 	Y(s) = \frac{A k_p}{s(T_p s + 1)} e^{-(T_d + b)s} \label{eq:output-s} \\
 	y(t) = A k_p u(t - (T_d + b))
-	\left[1 - e^{-\frac{1}{T_p}(t - (T_d + b))} \right] \label{eq:output-t}
+	\left[1 - e^{-(t - (T_d + b))T^{-1}_{p}} \right] \label{eq:output-t}
 \end{gather}
 
 Aquí, \(u(t)\) representa la función de Heaviside.
@@ -47,8 +47,8 @@ de la frecuencia y el tiempo se presentan en las
 
 \begin{align}
 	y(t) = & \, A k_p u(t - (T_d + b)) \Bigg[1
-	- \frac{T_{p_1}}{T_{p_1} - T_{p_2}} \, e^{-\frac{1}{T_{p_1}}(t - (T_d + b))} \nonumber \\
-	& \, + \frac{T_{p_2}}{T_{p_1} - T_{p_2}} \, e^{-\frac{1}{T_{p_2}}(t - (T_d + b))}
+	- \frac{T_{p_1}}{T_{p_1} - T_{p_2}} \, e^{-(t - (T_d + b))T^{-1}_{p_1}} \nonumber \\
+	& \, + \frac{T_{p_2}}{T_{p_1} - T_{p_2}} \, e^{-(t - (T_d + b))T^{-1}_{p_2}}
 	\Bigg]
 	\label{eq:output-t2}
 \end{align}
