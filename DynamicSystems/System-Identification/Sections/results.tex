@@ -1,77 +1,118 @@
-Los datos obtenidos del horno eléctrico se muestran en \cref{fig:DataHorno}, donde se tomaron un total de 109 mediciones 
-de temperatura en intervalos de 20 segundos, hasta que se alcanzó una estabilidad en la temperatura del horno. 
+Los datos de temperatura del horno eléctrico, mostrados en la \cref{fig:data},
+incluyen 109 mediciones tomadas cada 10 segundos. El horno se encendió a
+\qty{170}{\s}, definiendo \(b = 170\). Al ser eléctrico, se utilizó \(A = 110\),
+promedio del potencial de la red eléctrica.
+
+La gráfica presenta los resultados con un desplazamiento de \qty{20}{\celsius}
+debido a la temperatura ambiente. No obstante, el modelado se realizó sin
+considerar dicho offset, que fue agregado posteriormente a las funciones de
+salida de cada modelo para su representación gráfica.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Image/data-plot.pdf}
-    \caption{Datos obtenidos de un horno eléctrico}
-    \label{fig:DataHorno}
+  \centering
+  \includegraphics[width=0.9\linewidth]{../Images/data-plots.pdf}
+  \caption{Temperaturas registradas.}
+  \label{fig:data}
 \end{figure}
 
-En la \cref{fig:FirstOrden} se presentan los resultados de los modelos de primer orden, que incluyen el modelo obtenido con el 
-software Matlab ($M_f$) junto con otros dos modelos: uno basado en métodos gráficos ($H_{f1}$) y el otro utilizando el método de 
-Alfaro ($H_{f2}$). En la gráfica se observa que el tiempo de subida parece estar alrededor de los $200$ segundos, lo que indica 
-un retardo cercano a los 30 segundos. Por otro lado, los métodos $H_{f1}$ y $H_{f2}$ tienden a sobrestimar el resultado de salida 
-durante la mayor parte del tiempo.
+En la \cref{fig:firstOrder} se presentan las funciones de salida de los modelos
+de primer orden: el modelo obtenido mediante Matlab (\(M_f\)), junto con los
+modelos derivados del promedio de puntos (\(H_{f_1}\)) y el método de dos
+puntos de Alfaro (\(H_{f_2}\)).
+
+La gráfica muestra un tiempo de subida cercano a \qty{200}{\s}, lo que sugiere
+un \(T_d\) aproximado de \qty{30}{\s}. Sin embargo, \(H_{f_1}\) y \(M_f\) lo
+estiman en \qty{36}{\s}. Además, los métodos \(H_{f_1}\) y \(H_{f_2}\) tienden a
+sobrestimar los valores de salida durante gran parte del tiempo.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Image/fit-plot-firstOrder.pdf}
-    \caption{Modelos de primer orden con retardo}
-    \label{fig:FirstOrden}
+  \centering
+  \includegraphics[width=0.9\linewidth, page=1]{../Images/fit-plots.pdf}
+  \caption{Modelos de primer orden con retardo.}
+  \label{fig:firstOrder}
 \end{figure}
 
-Para el modelo de segundo orden, en la \cref{fig:SecondOrden} se muestran los resultados del modelo realizado en Matlab ($M_s$), 
-junto con los obtenidos mediante el método de Stark ($H_{s1}$) y el método de Jahanmiri ($H_{s2}$). En la gráfica se observa que 
-el modelo $H_{s1}$ sobrestima la salida, mientras que el método $H_{s2}$ subestima dicho valor.
+Los modelos de segundo orden se presentan en la \cref{fig:secondOrder},
+incluyendo el modelo obtenido en Matlab (\(M_s\)), el modelo basado en el
+método de Stark (\(H_{s_1}\)) y el modelo generado mediante el método de
+Jahanmiri y Fallahi (\(H_{s_2}\)).
+
+En la gráfica se observa que el modelo \(H_{s_1}\) tiende a sobrestimar los
+valores de salida, mientras que el modelo \(H_{s_2}\) los subestima.
 
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Image/SecondOrderPlot.pdf}
-    \caption{Modelos de segundo orden con retardo}
-    \label{fig:SecondOrden}
+  \centering
+  \includegraphics[width=0.9\linewidth, page=2]{../Images/fit-plots.pdf}
+  \caption{Modelos de segundo orden con retardo.}
+  \label{fig:secondOrder}
 \end{figure}
 
-Finalmente, en la \cref{fig:IEAP} se presenta la integral del error absoluto de predicción (IEAP) para cada uno de los métodos 
-empleados, junto con la integral del error cuadrático de predicción (IECP) y el porcentaje de error de predicción (PEP). Se 
-observa que los métodos que presentan los valores más bajos de IEAP son los realizados con el software Matlab, mientras que 
-el mayor error corresponde al método $H_{s_{1}}$.
- 
+En general, los modelos de primer y segundo orden generados con Matlab
+parecen predecir satisfactoriamente el comportamiento del sistema durante la
+mayor parte del tiempo.
+
+Para evaluar la validez de los modelos, se calcularon la Integral del Error
+Absoluto de Predicción (IEAP) y la Integral del Error Cuadrático de Predicción
+(IECP). Debido a la discretización de los datos y la ausencia de una función
+analítica de salida del sistema, estas integrales fueron calculadas numéricamente.
+
+En la \cref{fig:IEAP} se muestra el valor numérico de la IEAP para cada uno de los
+métodos empleados. Se considera como óptimo el método con menor IEAP, el cual sirve
+como referencia para calcular el Porcentaje de Error de Predicción (PEP) de los
+demás métodos.
+
 \begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Image/fit-plots-ieap.pdf}
-    \caption{Integral del error absoluto de predicción}
-    \label{fig:IEAP}
+  \centering
+  \includegraphics[width=0.9\linewidth, page=3]{../Images/fit-plots.pdf}
+  \caption{Integral del Error Absoluto de Predicción.}
+  \label{fig:IEAP}
 \end{figure}
 
-En el \cref{tab:Metodos} se presentan los coeficientes obtenidos para las funciones de transferencia correspondientes a los
-diferentes métodos empleados, así como el IEAP, IECP y PEP. 
+La gráfica confirma que los modelos con menor error absoluto fueron los proporcionados
+por Matlab, \(M_s\) y \(M_f\), respectivamente.
+En contraste, los métodos \(H\) presentan mayores errores, destacando \(H_{s_1}\)
+como el de mayor imprecisión.
+Entre los métodos no computacionales, \(H_{f_1}\) es el que presenta el menor error,
+lo cual se atribuye a que la mayor cantidad de puntos empleados permite una mejor
+aproximación de la constante de tiempo del sistema.
 
-\begin{table}[htbp!]
-    \centering
-    \rowcolors{2}{white}{gray!25}  % Alternancia de colores
-    \begin{tabular}{c|S[table-format=1.3]|S[table-format=3.3]|S[table-format=3.3]|S[table-format=2.3]|S[table-format=4.3]
+\begin{table*}[hbtp!]
+  \centering
+  \rowcolors{2}{white}{gray!25}
+  \begin{tabular}{c|S[table-format=1.3]|S[table-format=3.3]|S[table-format=3.3]|S[table-format=-2.3]|S[table-format=4.3]
     |S[table-format=4.3]|S[table-format=3.3]}
-    \toprule
-        {Método} & {$k_{p}$} & {$T_{p_{1}}$} & {$T_{p_{2}}$} & {$T_{d}$} & {IEAP($10^{1}$)} & {IECP($10^{1}$)} & {PEP} \\
-    \midrule
-    {$H_{f_{1}}$} & 2.000 & 303.000 & 0.000 & 30.000 & 140.911761 & 418.457674 & 51.394840 \\ \hline
-    {$H_{f_{2}}$} & 2.000 & 291.200 & 0.000 & 36.160 & 175.520118 & 466.675057 & 88.577873 \\ \hline
-    {$M_{f}$}  & 2.001 & 298.883 & 0.000 & 36.910 & 102.073482 & 202.591079 & 9.667201  \\ \hline
-    {$H_{s_{1}}$} & 2.000 & 66.841  & 263.605 & -20.169 & 428.910643 & 2263.700259 & 360.819292 \\ \hline
-    {$H_{s_{2}}$} & 2.000 & 0.404   & 312.988 & 30.000 & 198.103604 & 567.180287 & 112.841448 \\ \hline
-    {$M_{s}$}  & 1.989 & 25.578  & 290.566 & 14.490 & 93.075670  & 148.028085 & 0.000000  \\ \hline
-    \bottomrule
-    \end{tabular}
-    \caption{Resultados obtenidos para los métodos empleados}
-    \label{tab:Metodos}
-\end{table}
+  \toprule
+  {Método} & {$k_{p}$} & {$T_{p_{1}}$} & {$T_{p_{2}}$} & {$T_{d}$} & {IEAP $(10^{1})$} & {IECP $(10^{1})$} & {PEP} \\
+  \midrule
+  {$H_{f_1}$} & 2.000 & 303.000 & 0.000 & 30.000 & 140.912 & 418.458 & 51.395 \\
+  {$H_{f_2}$} & 2.000 & 291.200 & 0.000 & 36.160 & 175.520 & 466.675 & 88.578 \\
+  {$M_f$} & 2.001 & 298.883 & 0.000 & 36.910 & 102.073 & 202.591 & 9.667 \\
+  {$H_{s_1}$} & 2.000 & 66.841 & 263.605 & -20.169 & 428.911 & 2263.700 & 360.819 \\
+  {$H_{s_2}$} & 2.000 & 0.404 & 312.988 & 30.000 & 198.104 & 567.180 & 112.841 \\
+  {$M_s$} & 1.989 & 25.578 & 290.566 & 14.490 & 93.076 & 148.028 & {-} \\
+  \bottomrule
+\end{tabular}
+\caption{Parámetros de cada modelo.}
+\label{tab:parameters}
+\end{table*}
 
-Teniendo en cuenta el IEAP obtenido para cada uno de los métodos empleados, se observa que el modelo que mejor se ajusta es el 
-de segundo orden realizado con el software Matlab. Por lo tanto, se toma este modelo como referencia para determinar el PEP de los 
-demás modelos, lo que da como resultado un PEP de $0.000$ para el modelo de Matlab.
+En la \cref{tab:parameters} se presentan los parámetros de cada modelo.
+Considerando el menor valor de IEAP obtenido, el modelo \(M_s\) se toma como
+referencia para calcular el PEP de los demás métodos.
+Los valores de IEAP e IECP se presentan en una escala de \(10^1\),
+debido al intervalo de medición;
+valores más bajos indican mejores modelos.
 
-Se observa un alto valor de IEAP en los modelos $H$, debido a que el tiempo de recolección de datos fue insuficiente para 
-determinar experimentalmente la ganancia de la función de transferencia. En su lugar, se utilizó el valor proporcionado por 
-Matlab para el modelo de primer orden.
-\end{table}
+Dada la falta de datos cuando el horno alcanza una temperatura estable,
+\(k_p\) fue estimado como \(2.0\) para todos los métodos \(H\),
+estimación que es consistente con los valores obtenidos computacionalmente
+en los métodos \(M\).
+
+Para los modelos de primer orden, se obtuvieron valores de \(T_{p_1}\)
+cercanos a \qty{300}{\s},
+mientras que en los modelos de segundo orden no se evidenció una convergencia
+entre los métodos.
+
+Finalmente, el método \(H_{s_1}\) presenta un valor de retraso negativo (\(T_d < 0\)),
+lo cual es contraintuitivo, ya que implica no causalidad.
+Este resultado explica por qué \(H_{s_1}\) es el peor predictor del sistema.
