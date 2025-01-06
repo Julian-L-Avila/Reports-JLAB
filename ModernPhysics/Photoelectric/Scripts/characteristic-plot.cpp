@@ -10,14 +10,14 @@ void ConfigureGnuplot(Gnuplot& gp) {
     << "set grid\n"
     << "set key L l t\n"
     << "set style data linespoints\n"
-    << "set xlabel '$U \\, [\\si{\\volt}]$'\n"
+    << "set xlabel '$V \\, [\\si{\\volt}]$'\n"
     << "set ylabel '$I_p \\, [\\si{\\nano\\ampere}]$'\n";
 }
 
 void PlotData(Gnuplot& gp, const char* file, const char* title) {
   gp << "set title '" << title << "'\n"
     << "plot for [i=1:3] '" << file
-    << "' using ($1==i ? $2 : 1/0):($1==i ? $3 : 1/0) title sprintf('$I_{%d}$', i)\n";
+    << "' using ($1==i ? $2 : 1/0):($1==i ? $3 : 1/0) lw 2 title sprintf('$I_{%d}$', i)\n";
 }
 
 void LinearFit(Gnuplot& gp, const char* file) {
@@ -26,8 +26,8 @@ void LinearFit(Gnuplot& gp, const char* file) {
     << "set xlabel '$\\nu \\, [\\si{\\tera\\Hz}]$'\n"
     << "set ylabel '$K_{m} \\, [\\si{\\eV}]$'\n"
     << "set title 'Energía Cinética en Función de Frecuencia'\n"
-    << "set label sprintf('$h = \\qty{%.3e}{\\eV}$', h * 1.0e-12) at graph 0.1,0.7\n"
-    << "plot '" << file << "' u 1:2 title 'Data' with points, K(x) with lines title 'Fit'\n"
+    << "set label sprintf('$h = \\qty{%.3e}{\\eV\\s}$', h * 1.0e-12) at graph 0.1,0.55\n"
+    << "plot '" << file << "' u 1:2 title 'Data' with points, K(x) with lines lw 2 title 'Fit'\n"
     << "print('h = ', h * 1.0e-12)\n";
 }
 
@@ -37,5 +37,7 @@ int main() {
   PlotData(gp, kDataFiles[0], "Curva Característica usando Filtro Violeta");
   PlotData(gp, kDataFiles[1], "Curva Característica usando Filtro Azul");
   LinearFit(gp, kDataFiles[2]);
+
+  return 0;
 }
 
