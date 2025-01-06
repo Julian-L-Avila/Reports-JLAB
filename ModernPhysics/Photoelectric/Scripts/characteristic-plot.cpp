@@ -21,12 +21,13 @@ void PlotData(Gnuplot& gp, const char* file, const char* title) {
 }
 
 void LinearFit(Gnuplot& gp, const char* file) {
-  gp << "K(v) = h * v * 1.0e4 / 2.998 + b\n"
+  gp << "K(v) = h * v + b\n"
     << "fit K(x) '" << file << "' u 1:2 via h, b\n"
     << "set xlabel '$\\nu \\, [\\si{\\tera\\Hz}]$'\n"
     << "set ylabel '$K_{m} \\, [\\si{\\eV}]$'\n"
+    << "set xrange [550:750]\n"
     << "set title 'Energía Cinética en Función de Frecuencia'\n"
-    << "set label sprintf('$h = \\qty{%.3e}{\\eV\\s}$', h * 1.0e-12) at graph 0.1,0.55\n"
+    << "set label sprintf('$h = \\qty{%.3e}{\\eV\\s}$', h * 1e-12) at graph 0.1,0.55\n"
     << "plot '" << file << "' u 1:2 title 'Data' with points, K(x) with lines lw 2 title 'Fit'\n"
     << "print('h = ', h * 1.0e-12)\n";
 }
