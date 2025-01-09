@@ -1,66 +1,26 @@
-\subsection{Promedio de puntos}
+Para obtener las curvas características de fotocorriente, se montó una lámpara 
+de mercurio en un extremo de una base metálica. A continuación, se colocó un 
+diafragma regulable para ajustar la intensidad lumínica, seguido de un filtro 
+de color azul o violeta. Finalmente, en el otro extremo de la base metálica, se
+posicionó la fotocelda. Este montaje se muestra en la  
+\cref{fig:experimental-setup}.
 
-Los parámetros \(k_p\) y \(T_d\) se determinan a partir de la gráfica de la
-respuesta del sistema. El valor \(A k_p\) corresponde al nivel al que tiende
-la salida, mientras que \(T_d\) representa el tiempo que el sistema tarda en
-responder tras la activación de la entrada en el instante \(b\).
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.9\linewidth, page=2]{../Images/characteristics.pdf}
+    \caption{Montaje experimental.}
+    \label{fig:experimental-setup}
+  \end{center}
+\end{figure}
 
-La constante de tiempo se calcula considerando el intervalo posterior a
-\(T_d + b\) necesario para que el sistema alcance porcentajes clave del
-valor final, como \qty{28}{\percent}, \qty{50}{\percent} (vida media),
-\qty{63}{\percent}, \qty{86}{\percent} y \qty{95}{\percent}. Los tiempos
-obtenidos para cada porcentaje se promedian, proporcionando una aproximación
-de la constante característica del sistema.
+Para la toma de datos, se utilizó un picoamperímetro para medir la corriente y 
+una resistencia variable para ajustar el voltaje. Para un filtro del mismo 
+color, se variaron tres configuraciones de apertura del diafragma: 
+completamente abierto, a una apertura media y lo más cerrado posible. 
+La fuente de voltaje se fijó inicialmente en 5.1 V, y con la resistencia 
+variable se tomaron cinco valores distintos de voltaje dentro de este rango. 
+Luego, se midieron los valores de corriente correspondientes a esos voltajes.
 
-\subsection{Método de dos puntos (Alfaro)}
-
-Este método emplea dos tiempos específicos, \(t_1\) y \(t_2\), que corresponden
-a los instantes en que el sistema alcanza los porcentajes de \qty{25}{\percent}
-y \qty{75}{\percent} del valor final, respectivamente. La ganancia \(k_p\) se
-determina gráficamente, mientras que las constantes \(T_p\) y \(T_d\) se
-calculan mediante las \cref{eq:Tp-Alfaro,eq:Td-Alfaro}.
-\cite{ruiz-2011}
-\begin{gather}
-  T_p = -0.910 t_1 + 0.910 t_2 \label{eq:Tp-Alfaro} \\
-  T_d = 1.262 t_1 - 0.262 t_2 \label{eq:Td-Alfaro}
-\end{gather}
-
-\subsection{Método de Stark}
-
-Este método utiliza los tiempos \(t_1, t_2, t_3\), que corresponden a los
-instantes en que el sistema alcanza el \qty{15}{\percent}, \qty{45}{\percent}
-y \qty{75}{\percent} del valor final.
-Las constantes del sistema se obtienen mediante las \cref{eq:Td-Stark,eq:Tp-Stark}.
-\begin{equation}
-  x = \frac{t_2 - t_1}{t_3 - t_1}
-\end{equation}
-\begin{gather}
-  \zeta = \frac{0.0805 - 5.547 \left(0.475 - x\right)^2}{x - 0.356} \label{eq:ζ-Stark} \\
-  \omega_n = \frac{2.6 \zeta - 0.60}{t_3 - t_2} \label{eq:ω-Stark}
-\end{gather}
-\begin{gather}
-  T_d = t_2 - \frac{0.922}{\omega_n}(1.66)^{\zeta} \label{eq:Td-Stark} \\
-  T_p = \frac{\zeta \pm \sqrt{\zeta^2 - 1}}{\omega_n} \label{eq:Tp-Stark}
-\end{gather}
-
-Las \cref{eq:ζ-Stark,eq:ω-Stark} permiten calcular el coeficiente de
-amortiguamiento \(\zeta\) y la frecuencia natural del sistema \(\omega_n\).
-
-\subsection{Método de Jahanmiri y Fallahi}
-
-En este método, \(T_d\) corresponde al tiempo en que el sistema alcanza
-el \qty{2}{\percent} de su valor final. Además, se utiliza el tiempo \(t_1\),
-que equivale al \qty{90}{\percent}. Las constantes de tiempo se determinan
-de manera similar al método de Stark, utilizando la \cref{eq:Tp-Stark},
-pero \(\zeta\) y \(\omega_n\) se definen a partir de las \cref{eq:ζ-JF,eq:ω-JF}.
-\cite{jahanmiri-1997}
-\begin{gather}
-  \zeta = 13.9352 \label{eq:ζ-JF} \\
-  \omega_n = \frac{0.424301 + 4.62533 \zeta - 2.65412 e^{-\zeta}}{t_1 - T_d} \label{eq:ω-JF}
-\end{gather}
-
-\subsection{Modelos de MATLAB}
-
-Se empleó la herramienta de Identificación de Sistemas de MATLAB, así como el
-PDI Tuner, donde se realiza un ajuste numérico para determinar las constantes
-de la función de transferencia a buscar, ya sea de primer o segundo orden.
+Posteriormente, se invirtió la polaridad de la fuente de voltaje y se repitió 
+el mismo procedimiento. Este proceso se realizó para las tres intensidades 
+lumínicas antes de cambiar al segundo filtro y repetir la toma de datos.
