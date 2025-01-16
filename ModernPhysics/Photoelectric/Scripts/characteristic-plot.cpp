@@ -41,7 +41,7 @@ void LinearFit(Gnuplot& gp, const char* file) {
 int main() {
   Gnuplot gp;
   ConfigureGnuplot(gp);
-  for (int i = 0; i < 2; ++i) PlotData(gp, kDataFiles[i], i ? "Curva Característica usando Filtro Azul" : "Curva Característica usando Filtro Violeta", 2 - i, i ? 360 : 140);
+  for (int i = 0; i < 2; ++i) PlotData(gp, kDataFiles[i], i ? "Curva Característica usando Filtro Azul" : "Curva Característica usando Filtro Ultravioleta", 2 - i, i ? 360 : 140);
   LinearFit(gp, kDataFiles[2]);
 }
 
