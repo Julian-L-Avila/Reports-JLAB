@@ -1,8 +1,8 @@
 *******************************************************************************
-Mon Jan  6 16:35:51 2025
+Thu Jan 16 17:01:32 2025
 
 
-FIT:    data read from '../Data/stop-potential.csv' u 1:2:(0.001) yerror
+FIT:    data read from '../Data/stop-potential.csv' u 2:3:(0.001) yerror
         format = x:z:s
         #datapoints = 2
 function used for fitting: K(x)
@@ -10,11 +10,11 @@ function used for fitting: K(x)
 fitted parameters initialized with current variable values
 
 iter      chisq       delta/lim  lambda   h             b            
-   0 9.0720018560e+11   0.00e+00  4.76e+05    1.000000e+00   1.000000e+00
-  10 1.2325951644e-26   0.00e+00  4.76e+00    4.000000e-03  -1.560000e+00
+   0 1.1194311056e+12   0.00e+00  5.29e+05    1.000000e+00   1.000000e+00
+   9 1.1093356480e-25   0.00e+00  5.29e+01    4.341085e-03  -2.116279e+00
 
-After 10 iterations the fit converged.
-final sum of squares of residuals : 1.2326e-26
+After 9 iterations the fit converged.
+final sum of squares of residuals : 1.10934e-25
 rel. change during last iteration : 0
 
 
@@ -24,5 +24,5 @@ In this degenerate case, all errors are zero by definition.
 Final set of parameters 
 ======================= 
 
-h               = 0.004          
-b               = -1.56          
+h               = 0.00434109     
+b               = -2.11628       

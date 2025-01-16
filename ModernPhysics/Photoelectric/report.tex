@@ -19,12 +19,14 @@
 \usepackage{float}
 \usepackage{svg}
 \usepackage{tabularx, ragged2e, booktabs}
+\usepackage{pgfplotstable}
 \usepackage{siunitx}
 \usepackage[spanish]{cleveref}
 \AtBeginDocument{\decimalpoint}
 \graphicspath{{./Images}}
 
 \usepackage[version=4]{mhchem}
+\pgfplotsset{compat=1.18}
 
 \hypersetup{
   colorlinks=true,
@@ -37,6 +39,9 @@
 
 \renewcommand\Authand{, y }
 \renewcommand\Authands{, y }
+
+\newcommand{\planckhexp}{\qty{4.341e-15}{\eV\s}}
+\newcommand{\workfunctionexp}{\qty{2.116}{\eV}}
 
 \begin{document}
 
