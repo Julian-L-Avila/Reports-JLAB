@@ -8,19 +8,19 @@ cambio de polaridad falló durante la adquisición de datos, impidiendo
 la determinación del potencial de frenado en dicho caso.
 
 \begin{figure}[htbp!]
-\begin{center}
-  \includegraphics[width=0.9\linewidth, page=2]{../Images/characteristics.pdf}
-  \caption{Curva característica de la fotocelda con filtro azul.}
-  \label{fig:blue-data}
-\end{center}
+  \begin{center}
+    \includegraphics[width=\linewidth, page=2]{../Images/characteristics.pdf}
+    \caption{Curva característica de la fotocelda con filtro azul.}
+    \label{fig:blue-data}
+  \end{center}
 \end{figure}
 
 \begin{figure}[htbp!]
-\begin{center}
-  \includegraphics[width=0.9\linewidth, page=1]{../Images/characteristics.pdf}
-  \caption{Curva característica de la fotocelda con filtro violeta.}
-  \label{fig:violet-data}
-\end{center}
+  \begin{center}
+    \includegraphics[width=\linewidth, page=1]{../Images/characteristics.pdf}
+    \caption{Curva característica de la fotocelda con filtro violeta.}
+    \label{fig:violet-data}
+  \end{center}
 \end{figure}
 
 Las gráficas muestran que la intensidad lumínica \(I\) es proporcional
@@ -44,15 +44,24 @@ para cada filtro se presentan en la \cref{tab:V0-data}.
 
 \begin{table}[htbp!]
   \centering
-  \rowcolors{2}{white}{gray!25}
-  \begin{tabular}{c|S[table-format=3.0]|S[table-format=3.0]|S[table-format=1.2(2)]}
-    \toprule
-    Filtro & {\(\lambda \, [\si{\nano\metre}]\)} & {\(\nu \, [\si{\tera\Hz}]\)} & {\(V_0 \, [\si{\volt}]\)} \\
-    \midrule
-    Azul & 500 & 600 & 0.84(1) \\
-    Violta & 405 & 740 & 1.40(1) \\
-    \bottomrule
-  \end{tabular}
+  \pgfplotstabletypeset[
+  col sep=tab,
+  text indicator=", string type,
+  header=false,
+  columns={3,0,1,2}, % Specify column indices manually
+  columns/3/.style={column name={Filtro}, column type=c},
+  columns/0/.style={column name={\text{\(\lambda\) \([\si{\nano\meter}\)]}}, column type={S[table-format=3.0]}},
+  columns/1/.style={column name={\text{\(\nu\) \([\si{\tera\Hz}]\)}}, column type={S[table-format=3.0]}},
+  columns/2/.style={
+      column name={\text{\(V_0\) \([\si{\volt}]\)}},
+      column type={S[table-format=1.2]},
+      postproc cell content/.append style={
+        @cell content={\ensuremath{##1 \pm 0.01}}}
+    },
+  every head row/.style={
+    before row=\toprule, after row=\midrule},
+  every last row/.style={after row=\bottomrule}
+  ]{./Data/stop-potential.csv}
   \vspace{1.5pt}
   \caption{Potencial de frenado según el filtro utilizado.}
   \label{tab:V0-data}
@@ -72,11 +81,11 @@ Dado que solo se cuentan con dos puntos y dos parámetros a ajustar (pendiente e
 intercepto), el error computacional del ajuste es nulo.
 
 \begin{figure}[htbp!]
-\begin{center}
-  \includegraphics[width=0.9\linewidth, page=3]{../Images/characteristics.pdf}
-  \caption{Energía cinética de los electrones en función de la frecuencia.}
-  \label{fig:h-constant}
-\end{center}
+  \begin{center}
+    \includegraphics[width=\linewidth, page=3]{../Images/characteristics.pdf}
+    \caption{Energía cinética de los electrones en función de la frecuencia.}
+    \label{fig:h-constant}
+  \end{center}
 \end{figure}
 
 El ajuste lineal proporciona un valor de \( h = \qty{4.00}{\eV\s} \), con un error
