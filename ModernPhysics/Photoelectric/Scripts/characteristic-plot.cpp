@@ -5,7 +5,7 @@ constexpr std::array<const char*, 3> kDataFiles = {"../Data/violet.csv", "../Dat
 constexpr char kOutputFile[] = "characteristics.tex";
 
 void ConfigureGnuplot(Gnuplot& gp) {
-  gp << "set term tikz standalone header '\\usepackage{siunitx}'\n"
+  gp << "set term tikz standalone header '\\usepackage{siunitx} \\sisetup{separate-uncertainty}'\n"
     << "set output '" << kOutputFile << "'\n"
     << "set grid\nset key L l t\nset style data linespoints\n"
     << "set xlabel '$V \\, [\\si{\\volt}]$'\n"
@@ -30,8 +30,8 @@ void LinearFit(Gnuplot& gp, const char* file) {
     << "set yrange [0.7:1.6]\n"
     << "set xtics 50\nset mxtics 5\nset ytics 0.2\nset mytics 2\n"
     << "set title 'Energía Cinética en Función de Frecuencia'\n"
-    << "set label sprintf('$h = \\qty{%.3e}{\\eV\\s}$', h * 1e-12) at graph 0.1,0.6\n"
-    << "set label sprintf('$\\phi = \\qty{%.3e}{\\eV}$', -b) at graph 0.1,0.5\n"
+    << "set label sprintf('$h = \\qty{%.1e}{\\eV\\s}$', h * 1e-12) at graph 0.1,0.6\n"
+    << "set label sprintf('$\\phi = \\qty{%.1e}{\\eV}$', -b) at graph 0.1,0.5\n"
     << "plot '" << file << "' u 2:3 title 'Data' with points ps 2, K(x) with lines lw 2 title 'Fit'\n"
     << "print('h = ', h * 1.0e-12)\n"
     << "print('v_0 = ', -b / h)\n"
@@ -44,4 +44,3 @@ int main() {
   for (int i = 0; i < 2; ++i) PlotData(gp, kDataFiles[i], i ? "Curva Característica usando Filtro Azul" : "Curva Característica usando Filtro Ultravioleta", 2 - i, i ? 360 : 140);
   LinearFit(gp, kDataFiles[2]);
 }
-
