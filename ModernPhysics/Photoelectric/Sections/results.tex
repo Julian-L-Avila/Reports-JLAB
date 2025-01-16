@@ -59,8 +59,8 @@ para cada filtro se presentan en la \cref{tab:V0-data}.
 \end{table}
 
 Se observa que, a mayor frecuencia de la luz incidente, mayor es la magnitud
-del potencial de frenado, en concordancia con el postulado de Planck, según el
-cual la energía de un fotón es proporcional a su frecuencia.
+del potencial de frenado, en concordancia con el postulado de Planck, \cref{eq:planck-postulate},
+según el cual la energía de un fotón es proporcional a su frecuencia.
 
 Por último, se grafica el potencial de frenado en función de la frecuencia.
 De acuerdo con la \cref{eq:K-energy}, la curva que une los puntos es una
@@ -79,8 +79,16 @@ intercepto), el error computacional del ajuste es nulo.
 \end{center}
 \end{figure}
 
-El ajuste lineal proporciona un valor de \(h = \qty{4.00}{\eV\s}\),
-lo que representa un error relativo porcentual del \qty{3}{\percent}
-respecto al valor de referencia \qty{4.136}{\eV\s} reportado en la literatura
-\cite{bureau-international-des-poids-et-mesures-2018}.
-Mientras que el valor de la función de trabajo es \(\phi = \qty{1.56}{\eV}\).
+El ajuste lineal proporciona un valor de \( h = \qty{4.00}{\eV\s} \), con un error
+relativo porcentual del \qty{3}{\percent} respecto al valor de referencia
+\qty{4.136}{\eV\s} reportado en la literatura \cite{bureau-international-des-poids-et-mesures-2018}.
+Por otro lado, la función de trabajo obtenida es \(\phi = \qty{1.56}{\eV}\).
+
+A partir de las \cref{eq:ν0-umbral,eq:λ0-umbral}, se determina una
+frecuencia umbral de \(\nu_0 = \qty{390}{\tera\Hz}\) y una longitud de onda
+umbral de \(\lambda_0 = \qty{766}{\nano\metre}\), correspondiente a una onda
+electromagnética en el infrarrojo \cite{bruno2005crc}.
+
+Estos valores son inesperados y se alejan de los resultados conocidos, ya que el
+metal con la menor función de trabajo reportada para el efecto fotoeléctrico es
+el cesio (\ce{Cs}), con \qty{1.9}{\eV} \cite{holzl-1979}.
