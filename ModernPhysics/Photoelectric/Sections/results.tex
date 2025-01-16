@@ -2,7 +2,7 @@ Empleando el montaje experimental descrito, se obtuvieron las curvas
 características de fotocorriente \(I_p\) en función del potencial \(V\)
 para la fotocelda, presentadas en las \cref{fig:blue-data,fig:violet-data}.
 En el caso del filtro azul, los datos corresponden a tres intensidades
-lumínicas distintas, mientras que para el filtro violeta solo se
+lumínicas distintas, mientras que para el filtro ultravioleta solo se
 registraron dos. Esto se debe a que, para la intensidad \(I_2\), el
 cambio de polaridad falló durante la adquisición de datos, impidiendo
 la determinación del potencial de frenado en dicho caso.
@@ -23,22 +23,18 @@ la determinación del potencial de frenado en dicho caso.
   \end{center}
 \end{figure}
 
-Las gráficas muestran que la intensidad lumínica \(I\) es proporcional
-a la magnitud de la fotocorriente \(I_p\), en concordancia con la teoría,
+Las gráficas muestran que la magnitud de la fotocorriente \( I_p \) es
+proporcional a la intensidad luminosa \( I \), en concordancia con la teoría,
 pues una mayor intensidad implica un mayor número de fotones capaces de
 generar el efecto. Sin embargo, la intensidad lumínica no influye en el
 valor del potencial de frenado, como se observa en ambos filtros.
 
 Otro aspecto a considerar es que, en igualdad de condiciones, se esperaría
-una mayor magnitud de \(I_p\) con el filtro violeta que con el azul.
+una mayor magnitud de \(I_p\) con el filtro ultravioleta que con el azul.
 No obstante, debido a las condiciones experimentales, no es posible comparar
 directamente dichas magnitudes, ya que las intensidades lumínicas no fueron
 equivalentes.
 
-Debido al desconocimiento de las especificaciones exactas de los filtros
-utilizados, se estimaron la longitud de onda \(\lambda\) y la frecuencia \(\nu\)
-de la luz incidente a partir del color del filtro bajo iluminación blanca y su
-comparación con valores reportados en la literatura \cite{bruno2005crc}.
 Los valores de \(\lambda\), \(\nu\) y el potencial de frenado \(V_0\)
 para cada filtro se presentan en la \cref{tab:V0-data}.
 
@@ -48,7 +44,7 @@ para cada filtro se presentan en la \cref{tab:V0-data}.
   col sep=tab,
   text indicator=", string type,
   header=false,
-  columns={3,0,1,2}, % Specify column indices manually
+  columns={3,0,1,2},
   columns/3/.style={column name={Filtro}, column type=c},
   columns/0/.style={column name={\text{\(\lambda\) \([\si{\nano\meter}\)]}}, column type={S[table-format=3.0]}},
   columns/1/.style={column name={\text{\(\nu\) \([\si{\tera\Hz}]\)}}, column type={S[table-format=3.0]}},
@@ -71,12 +67,8 @@ Se observa que, a mayor frecuencia de la luz incidente, mayor es la magnitud
 del potencial de frenado, en concordancia con el postulado de Planck, \cref{eq:planck-postulate},
 según el cual la energía de un fotón es proporcional a su frecuencia.
 
-Por último, se grafica el potencial de frenado en función de la frecuencia.
-De acuerdo con la \cref{eq:K-energy}, la curva que une los puntos es una
-línea recta cuya pendiente corresponde a la constante de Planck \(h\), y
-su intercepto con el eje \(y\) representa la función trabajo de la fotocelda.
-
-Los datos experimentales y el ajuste lineal se presentan en la \cref{fig:h-constant}.
+Por último, se grafica el potencial de frenado en función de la frecuencia,
+los datos experimentales y el ajuste lineal se presentan en la \cref{fig:h-constant}.
 Dado que solo se cuentan con dos puntos y dos parámetros a ajustar (pendiente e
 intercepto), el error computacional del ajuste es nulo.
 
@@ -88,16 +80,16 @@ intercepto), el error computacional del ajuste es nulo.
   \end{center}
 \end{figure}
 
-El ajuste lineal proporciona un valor de \( h = \qty{4.00}{\eV\s} \), con un error
-relativo porcentual del \qty{3}{\percent} respecto al valor de referencia
-\qty{4.136}{\eV\s} reportado en la literatura \cite{bureau-international-des-poids-et-mesures-2018}.
-Por otro lado, la función de trabajo obtenida es \(\phi = \qty{1.56}{\eV}\).
+El ajuste lineal proporciona un valor de \( h = \planckhexp \), con un error
+relativo porcentual del \qty{4.956}{\percent} respecto al valor de referencia
+\qty{4.136e-15}{\eV\s} reportado en la literatura
+\cite{bureau-international-des-poids-et-mesures-2018}.
+
+Por otro lado, la función de trabajo obtenida es \(\phi = \workfunctionexp \),
+con un error relativo porcentual del \qty{7.6}{\percent} respecto al valor
+reportado para el potasio (\ce{K}), \qty{2.29}{\eV} \cite{holzl-1979}.
 
 A partir de las \cref{eq:ν0-umbral,eq:λ0-umbral}, se determina una
-frecuencia umbral de \(\nu_0 = \qty{390}{\tera\Hz}\) y una longitud de onda
-umbral de \(\lambda_0 = \qty{766}{\nano\metre}\), correspondiente a una onda
-electromagnética en el infrarrojo \cite{bruno2005crc}.
-
-Estos valores son inesperados y se alejan de los resultados conocidos, ya que el
-metal con la menor función de trabajo reportada para el efecto fotoeléctrico es
-el cesio (\ce{Cs}), con \qty{1.9}{\eV} \cite{holzl-1979}.
+frecuencia umbral de \(\nu_0 = \qty{487}{\tera\Hz}\) y una longitud de onda
+umbral de \(\lambda_0 = \qty{615}{\nano\metre}\), correspondiente a una onda
+electromagnética en el naranja visible \cite{bruno2005crc}.
