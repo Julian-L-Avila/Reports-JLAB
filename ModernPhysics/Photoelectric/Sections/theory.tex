@@ -1,12 +1,19 @@
-%TODO: Add following equations
+La constante de Planck es una constante fundamental que describe la relación entre la energía de un fotón y su frecuencia descrito por el postulado de Plank \cite{planck1900}.
 
 \begin{equation}\label{eq:planck-postulate}
   E = h\nu
 \end{equation}
 
-\begin{equation}\label{eq:K-energy}
-  K = h\nu - \phi
-\end{equation}
+Experimentalmente, se observó que al irradiar un metal con radiación electromagnética, este libera electrones. En 1905, Albert Einstein propuso una interpretación para este fenómeno, afirmando que la radiación también tiene un comportamiento corpuscular \cite{einstein1905}, es decir, se compone de partículas denominadas fotones. Estos fotones transfieren su momento a los electrones en los átomos del metal, lo que provoca su expulsión. La energía cinética de los electrones emitidos corresponde a la diferencia entre la energía del fotón incidente y la energía mínima requerida para liberar el electrón del material.
+
+\begin{gather}\label{eq:K-energy}
+  K = h\nu - \phi\\
+  eV = h\nu - \phi
+\end{gather}
+
+Donde $K=0$ es la energía cinética de los electrones emitidos y $K=eV$ siendo V el potencial de frenado. Se aprecia a $h$ siendo la pendiente y $\phi$ el intercepto, realizando un ajuste lineal con los datos se pueden hallar ambas variables.
+
+La frecuencia umbral $\nu_0$ es la frecuencia mínima de la luz (o radiación electromagnética) que debe incidir sobre un material para que los electrones sean liberados de su superficie.
 
 \begin{gather}
   \nu_0 = \frac{\phi}{h} \label{eq:λ0-umbral} \\
