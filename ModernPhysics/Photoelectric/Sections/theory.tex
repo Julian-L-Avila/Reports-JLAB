@@ -1,17 +1,36 @@
-La constante de Planck es una constante fundamental que describe la relación entre la energía de un fotón y su frecuencia descrito por el postulado de Plank \cite{planck1900}.
+El efecto fotoeléctrico se produce cuando un fotón transfiere
+suficiente energía a un electrón para que este deje de estar
+ligado a un átomo \cite{Tobia}.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{Image/Efecto_fotoelectrico.pdf}
+  \caption{Efecto fotoeléctrico}
+  \label{fig:Fto_electric}
+\end{figure}
+
+Cuando la luz incide sobre una superficie metálica limpia, los electrones se liberan del cátodo. Si alguno de estos electrones colisiona con el ánodo, se genera una corriente en el circuito externo. Cuando la diferencia de potencial \( V \) es positiva, los electrones son atraídos hacia el ánodo, lo que incrementa el flujo de electrones que llegan al ánodo. A medida que \( V \) aumenta, más electrones alcanzan el ánodo, hasta que, para un valor suficientemente grande de \( V \), todos los electrones emitidos llegan al ánodo y la corriente alcanza su valor máximo \cite{Faraggi}.
+
+\begin{equation} 
+K_{max}=eV_{s} 
+\end{equation} 
+
+La constante de Planck es una constante fundamental que describe la relación entre la energía de un fotón y su frecuencia descrito por el postulado de Plank \cite{planck1900} y es muy importante para entender el comportamiento de los electrones dentro del fenómeno.
+
 \begin{equation}\label{eq:planck-postulate}
   E = h\nu
 \end{equation}
 
-Experimentalmente, se observó que al irradiar un metal con radiación electromagnética, este libera electrones. En 1905, Albert Einstein propuso una interpretación para este fenómeno, afirmando que la radiación también tiene un comportamiento corpuscular \cite{einstein1905}, es decir, se compone de partículas denominadas fotones. Estos fotones transfieren su momento a los electrones en los átomos del metal, lo que provoca su expulsión. La energía cinética de los electrones emitidos corresponde a la diferencia entre la energía del fotón incidente y la energía mínima requerida para liberar el electrón del material.
-\begin{gather}\label{eq:K-energy}
-  K = h\nu - \phi\\
-  eV = h\nu - \phi
-\end{gather}
+En 1905, Albert Einstein propuso una interpretación para este fenómeno, afirmando que la radiación también tiene un comportamiento corpuscular\cite{einstein1905}, es decir, se compone de partículas denominadas fotones. Estos fotones transfieren su momento a los electrones en los átomos del metal, lo que provoca su expulsión. La energía cinética de los electrones emitidos corresponde a la diferencia entre la energía del fotón incidente y la energía mínima requerida para liberar el electrón del material.
+ 
+\begin{equation}\label{eq:K-energy}
+  K_{max} = h\nu - \phi\\
+\end{equation}
 
-Donde $K=0$ es la energía cinética de los electrones emitidos y $K=eV$ siendo V el potencial de frenado. Se aprecia a $h$ siendo la pendiente y $\phi$ el intercepto, realizando un ajuste lineal con los datos se pueden hallar ambas variables.
+La relacion \ref{eq:K-energy} es una ecuación lineal, por tanto se aprecia que $h$ es la pendiente y $\phi$ el intercepto, realizando un ajuste lineal con los datos se pueden hallar ambas variables.
 
-La frecuencia umbral $\nu_0$ es la frecuencia mínima de la luz (o radiación electromagnética) que debe incidir sobre un material para que los electrones sean liberados de su superficie.
+la frecuencia umbral $\nu_0$ es la frecuencia mínima de la luz (o radiación electromagnética) que debe incidir sobre un material para que los electrones sean liberados de su superficie, se puede hallar cuando $K=0$ puesto que los electrones obtienen la energía suficiente para unicamente ser liberados del átomo llegando a la relación.
+
 \begin{gather}
   \nu_0 = \frac{\phi}{h} \label{eq:λ0-umbral} \\
   \lambda_0 = \frac{hc}{\phi} \label{eq:ν0-umbral}
