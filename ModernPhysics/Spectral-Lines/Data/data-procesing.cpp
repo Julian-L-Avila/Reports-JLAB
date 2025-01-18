@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iomanip>
+#include <ios>
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -65,15 +66,16 @@ void WriteProcessedData(std::ofstream& output_file, std::ifstream& data_file) {
 
 	const double h = planck_constant_r * 1e-3 / kPlanckDivisor;
 	const double σ = std::sqrt(planck_constant_r_u) / kPlanckDivisor;
-	const double Err = std::abs(kh - h) / kh;
+	const double Err = std::abs(kh - h) * 1.0e2 / kh;
 
 	std::cout << "h = " << h << "\n"
 		<< "σ = " << σ << "\n"
 		<< "Err = " << Err << "\n";
 
-	output_file << "\n# Planck Constant =" << h << "\n"
-		<< "# Uncertainty =" << σ << "\n"
-		<< "# Relative percentage error =" << Err;
+	output_file << std::setprecision(5) << std::scientific << "\n"
+		<< "# Planck Constant =\t" << h << "\n"
+		<< "# Uncertainty =\t" << σ << "\n"
+		<< "# Relative percentage error =\t" << Err;
 }
 
 void ProcessDataFile(const std::string& input_file) {
