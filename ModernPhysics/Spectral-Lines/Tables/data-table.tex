@@ -1,0 +1,40 @@
+\begin{table}[htbp!]
+  \centering
+  \pgfplotstabletypeset[
+  col sep=tab,
+  text indicator=", string type,
+  header=false,
+  zerofill,
+  columns={0,1,2,3,4},
+  columns/0/.style={column name={Color}, column type=c},
+  columns/1/.style={column name={\( n \)}, column type={S[table-format=1.0]}},
+  columns/2/.style={column name={
+    \text{\( \phi\) \([\si{\degree}]\)}},
+    column type={S[table-format=2.1(1)]},
+    precision=1,
+    sci,
+    sci zerofill,
+  },
+  columns/3/.style={column name={
+    \text{\( \lambda\) \([\si{\nano\metre}]\)}},
+    column type={S[table-format=3.0(1)]},
+    precision=0,
+    sci,
+    sci zerofill,
+  },
+  columns/4/.style={column name={
+    \text{\( h\) \([\si{\eV\s}]\)}},
+    column type={S[table-format=1.3(1)e-2]},
+    precision=1,
+    sci,
+    sci zerofill,
+    fixed zerofill,
+  },
+  every head row/.style={
+    before row=\toprule, after row=\midrule},
+  every last row/.style={after row=\bottomrule}
+  ]{./Data/data.tsv}
+  \vspace{1.5pt}
+  \caption{Datos para cada linea medida.}
+  \label{tab:V0-data}
+\end{table}
