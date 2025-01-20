@@ -38,25 +38,26 @@ std::tuple<double, double, double, double> ProcessLine(double quantum_number, do
 }
 
 void WriteProcessedData(std::ofstream& output_file, std::ifstream& data_file) {
-	output_file << "#Color\tn\tφ(σϕ) [deg]\tλ(σλ) [nm]\th(σh) [eVs]\n";
+	output_file << "#Nombre\tn\tφ(σϕ) [deg]\tλ(σλ) [nm]\tλ_e [nm]\th(σh) [eVs]\n";
 
 	double planck_constant_r = 0.0, planck_constant_r_u = 0.0;
-	std::string colour;
-	double quantum_number, angle, angle_uncertainty;
+	std::string name;
+	double quantum_number, angle, angle_uncertainty, expected_wavelength;
 
 	std::string header_line;
 	std::getline(data_file, header_line);
 
-	while (data_file >> quantum_number >> colour >> angle >> angle_uncertainty) {
+	while (data_file >> quantum_number >> name >> angle >> angle_uncertainty >> expected_wavelength) {
 		const auto [wavelength, wavelength_uncertainty, planck_constant, planck_uncertainty] =
 			ProcessLine(quantum_number, angle, angle_uncertainty);
 
 		output_file << std::fixed << std::setprecision(0)
-			<< colour << "\t" << quantum_number << "\t"
+			<< name << "\t" << quantum_number << "\t"
 			<< std::setprecision(1) << angle << "("
 			<< std::setprecision(0) << angle_uncertainty * 10 << ")\t"
 			<< std::setprecision(0) << wavelength << "("
 			<< std::setprecision(0) << wavelength_uncertainty << ")\t"
+			<< std::setprecision(1) << wavelength << "\t"
 			<< std::setprecision(3) << planck_constant * 1e12 << "("
 			<< std::setprecision(0) << planck_uncertainty * 1e15 << ")e-15\n";
 
