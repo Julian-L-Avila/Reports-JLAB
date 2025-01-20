@@ -1,0 +1,28 @@
+\begin{table}[htbp!]
+  \centering
+  \pgfplotstabletypeset[
+  col sep=tab,
+  text indicator=", string type,
+  header=false,
+  zerofill,
+  columns={0,5},
+  columns/0/.style={column name={Linea}, column type=c},
+  columns/5/.style={column name={
+    \text{\( h \) \([\si{\eV\s}]\)}},
+    column type={S[table-format=1.3(3)e-2]},
+    precision=1,
+    sci,
+    sci zerofill,
+  },
+  every head row/.style={
+    before row=\toprule, after row=\midrule},
+  every last row/.style={
+    after row=\midrule
+    Promedio & \planckhexp \\
+    \bottomrule
+  },
+  ]{./Data/data.tsv}
+  \vspace{1.5pt}
+  \caption{Valores calculados y promedio de la constante de Planck.}
+  \label{tab:planck}
+\end{table}
