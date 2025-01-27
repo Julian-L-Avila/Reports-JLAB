@@ -79,19 +79,50 @@ void WriteProcessedData(std::ofstream& output_file, std::ifstream& data_file) {
 		<< "# Relative percentage error =\t" << Err;
 }
 
-void ProcessDataFile(const std::string& input_file) {
+void WriteProcessedDataSodium(std::ofstream& output_file, std::ifstream& data_file) {
+	output_file << "#φ(σϕ) [deg]\tλ(σλ) [nm]\n";
+
+	std::string name;
+	double angle;
+
+	double angle_uncertainty = 0.001;
+
+	std::string header_line;
+	std::getline(data_file, header_line);
+
+	while (data_file >> angle) {
+		double wavelength = ComputeFranhoffer(angle);
+		double wavelength_uncertainty = ComputeWavelengthUncertainty(angle, angle_uncertainty);
+
+		output_file << std::fixed << std::setprecision(0)
+			<< std::setprecision(1) << angle << "("
+			<< std::setprecision(0) << 1 << ")\t"
+			<< std::setprecision(2) << wavelength << "("
+			<< std::setprecision(0) << wavelength_uncertainty * 100<< ")\n";
+	}
+}
+
+void ProcessDataFile(const std::string& input_file, const std::string& input_file2) {
 	std::ifstream data_file(input_file);
 	if (!data_file) return;
 
-	std::ofstream output_file("data.tsv");
+	std::ifstream data_file2(input_file2);
+	if (!data_file) return;
+
+	std::ofstream output_file("data-hydrogen.tsv");
+	if (!output_file) return;
+
+	std::ofstream output_file2("data-sodium.tsv");
 	if (!output_file) return;
 
 	WriteProcessedData(output_file, data_file);
 	std::cout << "Data has been processed and saved to: data.tsv\n";
+
+	WriteProcessedDataSodium(output_file2, data_file2);
 }
 
 int main() {
-	ProcessDataFile("./hydrogen.csv");
+	ProcessDataFile("./hydrogen.csv", "./sodium.tsv");
 	return 0;
 }
 
