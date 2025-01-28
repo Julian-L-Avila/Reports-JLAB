@@ -1,0 +1,33 @@
+\begin{table}[htbp!]
+  \centering
+  \pgfplotstabletypeset[
+  col sep=tab,
+  text indicator=", string type,
+  header=false,
+  zerofill,
+  columns={0,1},
+  columns/0/.style={column name={
+    \text{\( \phi\) \([\si{\degree}]\)}},
+    column type={S[table-format=2.1(1)]},
+    precision=1,
+    sci,
+    sci zerofill,
+  },
+  columns/1/.style={column name={
+    \text{\( \lambda \) \([\si{\nano\metre}]\)}},
+    column type={S[table-format=3.2(1)]},
+    precision=0,
+    sci,
+    sci zerofill,
+  },
+  every even row/.style={
+    before row={\rowcolor[gray]{0.9}}
+  },
+  every head row/.style={
+    before row=\toprule, after row=\midrule},
+  every last row/.style={after row=\bottomrule}
+  ]{./Data/data-sodium.tsv}
+  \vspace{1.5pt}
+  \caption{Longitudes de Onda Medidas del elemento desconocido.}
+  \label{tab:sodium}
+\end{table}
