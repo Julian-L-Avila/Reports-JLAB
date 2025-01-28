@@ -1,0 +1,31 @@
+Utilizando el montaje descrito, se midió el ángulo de difracción
+de tres líneas del espectro del átomo de hidrógeno.
+A partir de la \cref{eq:fraunhoffer}, se determinó la longitud de onda de cada
+una de las líneas medidas.
+Dado que estas corresponden a las tres primeras líneas visibles
+de la serie de Balmer, los números cuánticos asociados son, respectivamente,
+\(3\), \(4\) y \(5\).
+
+En la \cref{tab:lambdas} se presentan las longitudes de onda obtenidas
+experimentalmente (\( \lambda \)) y se comparan con los valores reportados en
+la literatura (\( \lambda_e \)) \cite{blatt1992modern}.
+Se observa que dos de estos valores se encuentran dentro de la desviación estándar
+de las mediciones, mientras que el correspondiente a la línea \( \alpha \)
+está a menos de dos desviaciones estándar.
+
+\input{./Tables/data-table.tex}
+
+Una vez determinada la longitud de onda y el número cuántico asociado,
+se utilizó la \cref{eq:planck}.
+Al tomar la raíz cúbica de dicha ecuación, se obtuvo un valor de la constante de
+Planck (\( h \)) para cada una de las líneas medidas.
+Estos valores se presentan en la \cref{tab:planck}, junto con el promedio de los
+resultados obtenidos.
+
+\input{./Tables/planck-table.tex}
+
+El valor calculado fue \( h = \planckhexp \), el cual se aproxima, en tres cifras
+significativas, al valor reportado en la literatura (\qty{4.135e-15}{\eV\s}) \cite{bureau-international-des-poids-et-mesures-2018}.
+Este se encuentra a menos de dos desviaciones estándar,
+con un error relativo porcentual de \qty{0.126}{\percent}.
+

@@ -1,0 +1,39 @@
+\begin{table}[htbp!]
+  \centering
+  \pgfplotstabletypeset[
+  col sep=tab,
+  text indicator=", string type,
+  header=false,
+  zerofill,
+  columns={0,1,2,3,4},
+  columns/0/.style={column name={Linea}, column type=c},
+  columns/1/.style={column name={\( n \)}, column type={S[table-format=1.0]}},
+  columns/2/.style={column name={
+    \text{\( \phi\) \([\si{\degree}]\)}},
+    column type={S[table-format=2.1(1)]},
+    precision=1,
+    sci,
+    sci zerofill,
+  },
+  columns/3/.style={column name={
+    \text{\( \lambda \) \([\si{\nano\metre}]\)}},
+    column type={S[table-format=3.0(1)]},
+    precision=0,
+    sci,
+    sci zerofill,
+  },
+  columns/4/.style={column name={
+    \text{\( \lambda_e \) \([\si{\nano\metre}]\)}},
+    column type={S[table-format=3.1]},
+    precision=1,
+    sci,
+    sci zerofill,
+  },
+  every head row/.style={
+    before row=\toprule, after row=\midrule},
+  every last row/.style={after row=\bottomrule}
+  ]{./Data/data-hydrogen.tsv}
+  \vspace{1.5pt}
+  \caption{Longitudes de onda medidas y de referencia para las líneas visibles de la serie de Balmer.}
+  \label{tab:lambdas}
+\end{table}
