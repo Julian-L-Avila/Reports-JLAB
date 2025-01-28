@@ -36,7 +36,7 @@ directamente dichas magnitudes, ya que las intensidades lumínicas no fueron
 equivalentes.
 
 Los valores de \(\lambda\), \(\nu\) y el potencial de frenado \(V_0\)
-para cada filtro se presentan en la \cref{tab:V0-data}.
+para cada filtro se presentan en el \cref{tab:V0-data}.
 
 \begin{table}[htbp!]
   \centering
@@ -67,8 +67,12 @@ Se observa que, a mayor frecuencia de la luz incidente, mayor es la magnitud
 del potencial de frenado, en concordancia con el postulado de Planck, \cref{eq:planck-postulate},
 según el cual la energía de un fotón es proporcional a su frecuencia.
 
-Por último, se grafica el potencial de frenado en función de la frecuencia,
-los datos experimentales y el ajuste lineal se presentan en la \cref{fig:h-constant}.
+Por último, se grafica la energía máxima en función de la frecuencia.
+De acuerdo con la \cref{eq:K-energy}, la curva que une los puntos es una
+línea recta cuya pendiente corresponde a la constante de Planck \(h\), y
+su intercepto con el eje \(y\) representa la función trabajo de la fotocelda.
+
+Los datos experimentales y el ajuste lineal se presentan en la \cref{fig:h-constant}.
 Dado que solo se cuentan con dos puntos y dos parámetros a ajustar (pendiente e
 intercepto), el error computacional del ajuste es nulo.
 
@@ -88,6 +92,11 @@ relativo porcentual del \qty{4.956}{\percent} respecto al valor de referencia
 Por otro lado, la función de trabajo obtenida es \(\phi = \workfunctionexp \),
 con un error relativo porcentual del \qty{7.6}{\percent} respecto al valor
 reportado para el potasio (\ce{K}), \qty{2.29}{\eV} \cite{holzl-1979}.
+
+Las incertidumbres de las constantes se calcularon mediante propagación de la
+incertidumbre intrínseca de la medición. En ambos casos, los valores reportados
+en la literatura se encuentran a menos de una desviación estándar, validando
+las cantidades obtenidas.
 
 A partir de las \cref{eq:ν0-umbral,eq:λ0-umbral}, se determina una
 frecuencia umbral de \(\nu_0 = \qty{487}{\tera\Hz}\) y una longitud de onda
