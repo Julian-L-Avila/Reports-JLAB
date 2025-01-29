@@ -1,0 +1,29 @@
+\begin{table}[htbp!]
+  \centering
+  \pgfplotstabletypeset[
+  col sep=tab,
+  text indicator=", string type,
+  header=false,
+  zerofill,
+  columns={0,1},
+  columns/0/.style={
+    column name={\text{\( U \) \([\si{\volt}]\)}},
+    column type={S[table-format=2.1]}
+  },
+  columns/1/.style={
+    column name={\text{\( I \) \([\si{\nano\ampere}]\)}},
+    column type={S[table-format=1.2]},
+  },
+  every even row/.style={
+    before row={\rowcolor[gray]{0.95}},
+  },
+  every head row/.style={
+    before row=\toprule, after row=\midrule},
+  every last row/.style={
+    after row=\bottomrule,
+  },
+  ]{./Data/peaks-current.tsv}
+  \vspace{1.5pt}
+  \caption{Valores experimentales de los picos de corriente.}
+  \label{tab:peaks}
+\end{table}

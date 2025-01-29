@@ -1,0 +1,26 @@
+Empleando el montaje descrito, se obtuvo la curva presentada en la \cref{fig:graph},
+donde se muestra la corriente del circuito en función del potencial de aceleración.
+Para la medición, se empleó un potencial de corrección \( U_1 = \qty{4.16}{\volt} \)
+y un potencial de frenado \( U_3 = \qty{0.24}{\volt} \).
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{./Figures/Graph-Scan.pdf}
+  \caption{Gráfica obtenida con el osciloscopio.}
+  \label{fig:graph}
+\end{figure}
+
+Se observa que la corriente no sigue un comportamiento lineal.
+Inicialmente, aumenta con el potencial hasta alcanzar un valor máximo,
+tras lo cual decrece y luego vuelve a incrementarse.
+Los picos de corriente y sus respectivos valores de potencial
+se presentan en la \cref{tab:peaks}, donde se obtiene una separación
+promedio entre picos de \( \Delta U = \qty{5.2}{\volt} \).
+Se registró una corriente final de \qty{1.30}{\nano\ampere} y un
+máximo de \qty{1.45}{\nano\ampere}.
+
+\input{./Tables/peak-current.tex}
+
+El valor esperado de separación entre picos es \qty{4.9}{\volt},
+lo que representa un error relativo del \qty{7.54}{\percent}
+respecto a la separación promedio obtenida en el experimento.
