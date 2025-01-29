@@ -1,8 +1,91 @@
-% ToDo: Equations needed, or the ones that allow the result to be obtained
-\begin{equation}\label{eq:fraunhoffer}
-  \lambda = d \sin(\phi)
+El modelo atómico de Bohr, propuesto en 1914 por Niels Bohr, describe al átomo
+como un sistema donde los electrones orbitan el núcleo en trayectorias
+circulares cuantizadas, como se ilustra en la \cref{fig:bohr-model}.
+En este modelo, los electrones solo pueden ocupar ciertos niveles de energía
+y transitar entre ellos mediante la emisión o absorción de fotones
+\cite{Bohr1913}.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{./Figures/bohrs-model-fig.pdf}
+    \caption{Modelo atómico de Bohr.}
+    \label{fig:bohr-model}
+  \end{center}
+\end{figure}
+
+El espectro de emisión atómico resulta de la transición de electrones desde
+un estado excitado a uno de menor energía.
+Cada elemento posee un espectro característico determinado por su configuración
+electrónica, lo que permite su identificación a través del análisis espectral.
+La \cref{fig:photon-emission} ilustra el proceso de emisión de un fotón
+debido a la transición de un electrón entre niveles energéticos.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{./Figures/photon-emission-fig.pdf}
+    \caption{Emisión de un fotón debido al cambio de órbita del electrón.}
+    \label{fig:photon-emission}
+  \end{center}
+\end{figure}
+
+La identificación de líneas espectrales se realiza mediante la ley de Fraunhofer,
+que relaciona la longitud de onda \( \lambda \) con el ángulo de difracción
+\( \phi \) y la separación \( d \) del sistema de difracción, según la \cref{fraunhoffer}.
+\begin{equation}\label{fraunhoffer}
+  \lambda = d \sin{\phi}
 \end{equation}
 
-\begin{equation}\label{eq:planck}
-  h^3 = \frac{e^2 m}{8 \epsilon^2_0 c}\left( \frac{1}{2^2} - \frac{1}{n^2_j} \right) \lambda
+El primer postulado establece que los electrones se mueven en órbitas estables
+donde la fuerza centrípeta \( F_c \) es igual a la fuerza electrostática \( F_e \),
+según la \cref{eq:forces}.
+\begin{equation}\label{eq:forces}
+  \frac{mv^2}{r} = \frac{e^2}{4 \pi \epsilon_0 r^2}
 \end{equation}
+
+De esta relación se deduce que la energía cinética \( T \) corresponde a la mitad
+de la energía potencial \( U(r) \), por lo que la energía total del sistema
+queda definida por la \cref{eq:energy-potential}.
+\begin{equation}\label{eq:energy-potential}
+  E = - \frac{V}{2}
+\end{equation}
+
+El segundo postulado de Bohr permite expresar la velocidad \( v \) del electrón
+en función de su masa \( m \), el radio de la órbita \( r \), el número cuántico
+principal \( n \) y la constante reducida de Planck \( \hbar \), como indica la
+ecuación \cref{eq:velocity}.
+\begin{gather}
+  m v r = n \hbar \notag \\
+  v = \frac{n \hbar}{m} \label{eq:velocity}
+\end{gather}
+
+A partir de esta relación y la \cref{eq:forces}, se obtiene la expresión
+del radio para la órbita de nésima energía, representada en la \cref{eq:nth-radii}.
+Cuando \( n = 1 \), el radio obtenido corresponde al radio de Bohr.
+\begin{equation}\label{eq:nth-radii}
+  r_{n}=\frac{\epsilon_{0} h^{2} n^{2}}{\pi m e^{2}}
+\end{equation}
+
+Usando esta expresión y la \cref{eq:energy-potential}, es posible
+determinar la energía de cada nivel cuántico mediante la \cref{eq:orbit_energy}.
+\begin{equation}\label{eq:orbit_energy}
+  E = -\frac{m e^4}{8\epsilon_0^2n^2h^2}
+\end{equation}
+
+La diferencia de energía entre dos estados \( n \) y \( n_f \) está dada por la
+\cref{eq:energy_n}.
+\begin{equation}\label{eq:energy_n}
+  \Delta E=\frac{m e^4}{8\epsilon_0^2h^2}\left(\frac{1}{n_f^2}-\frac{1}{n^2}\right)
+\end{equation}
+
+La relación entre energía y longitud de onda, establecida por Planck en
+\cite{planck1901}, indica que \( E= h \nu \).
+Sustituyendo en la \cref{eq:energy_n}, se obtiene la fórmula de Rydberg.
+Cuando \( n_f = 2 \), la \cref{eq:formula_Rydberg} representa la serie de Balmer.
+\begin{equation}\label{eq:formula_Rydberg}
+  \frac{1}{\lambda}=R_{\infty}\left(\frac{1}{n_f^2}-\frac{1}{n^2}\right)
+\end{equation}
+
+Finalmente, la constante de Rydberg \( R_{\infty} \) está relacionada con la
+constante de Planck \( h \), la carga del electrón \( e \), la masa \( m_e \)
+y la constante de permittividad del vacío \( \epsilon_0 \), y se utiliza
+para calcular la longitud de onda en la fórmula de la \cref{eq:formula_Rydberg}.
