@@ -36,6 +36,7 @@ Para identificar las lineas correspondientes se utiliza la ley de \textit{Fraunh
 \begin{equation}\label{fraunhoffer}
   n\lambda=d\sin{\theta}
 \end{equation}
+\end{equation} 
 
 En donde $n$ es el orden máximo de difracción, $\lambda$ es la longitud de onda incidente, $d$ es la separación en la red de difracción y $\theta$ es el ángulo de difracción máximo.
 
@@ -45,70 +46,71 @@ En donde $n$ es el orden máximo de difracción, $\lambda$ es la longitud de ond
 Del mismo modo que se puede identificar los elementos usando el espectro de emisión, también se puede hallar la constante de plank $h$, para ello se tiene presente el primer postulado de Bohr \cite{Bohr1913} para órbitas estables y con ello, una estabilidad en la fuerza centrífuga $F_c$ y fuerza atractiva $F_e$.
 
 \begin{gather}\label{eq:forces}
-  F_c=F_e \\
-  \frac{mv^2}{r}=\frac{e^2}{4\pi\epsilon_0r^2}
+    F_c=F_e \\
+    \frac{mv^2}{r}=\frac{e^2}{4\pi\epsilon_0r^2}
 \end{gather}
 
 Despejando $r$ de la ecuación \ref{eq:forces} se llega que
 
 \begin{equation}\label{eq:first_r}
-  r=\frac{e^2}{4\pi\epsilon_0v^2m}
+    r=\frac{e^2}{4\pi\epsilon_0v^2m}
 \end{equation}
 
 Empleando el segundo postulado de Bohr\cite{Bohr1913} y despejando $v$
 
 \begin{gather}\label{second_postulate}
-  mvr=n\hbar\\
-  v=\frac{n\hbar}{mr} \notag
+    mvr=n\hbar\\
+    v=\frac{n\hbar}{mr} \notag
 \end{gather}
 
 Aplicando la ecuación \ref{second_postulate} en \ref{eq:first_r} se llega a la órbita estable según un número entero $n$ o número cuántico principal.
 
 \begin{equation}\label{eq:stable_r}
-  r=\frac{4\pi\epsilon_0n^2\hbar^2}{me^2}
+    r=\frac{4\pi\epsilon_0n^2\hbar^2}{me^2}
 \end{equation}
 
 El teórema del virial para fuerzas electrostáticas dice que la energía total del sistema es igual a la mitad de su energía potencial e igual al negativo de su energía cinética, es decir:
 
 \begin{equation}\label{eq:virial_theorem}
-  E=\frac{V}{2}=-T
+    E=\frac{V}{2}=-T
 \end{equation}
 
 Remplazando las expresiones de $V$ y $T$ en \ref{eq:virial_theorem} se obtiene
 
 \begin{equation}\label{eq:eq_energy}
-  \frac{1}{2}mv^2=\frac{e^2}{4\pi\epsilon_0r}
+    \frac{1}{2}mv^2=\frac{e^2}{4\pi\epsilon_0r}
 \end{equation}
 
 Que despejando $r$ de la ecuación \ref{eq:eq_energy} y remplazando $v$ por la ecuación \ref{second_postulate} se tiene la expresión
 
 \begin{equation}\label{eq:r_final}
-  r=\frac{\pi\epsilon_0\hbar^2n^2}{me^2}
+    r=\frac{\pi\epsilon_0\hbar^2n^2}{me^2}
 \end{equation}
 
 Remplazando la ecuación \ref{eq:r_final} en \ref{eq:eq_energy} se tiene una expresión de la energía en función de la orbita del electrón
 
 \begin{equation}\label{eq:orbit_energy}
-  E=-\frac{me^4}{8\epsilon_0^2n^2h^2}
+    E=-\frac{me^4}{8\epsilon_0^2n^2h^2}
 \end{equation}
 
 El fotón liberado por el electron al bajar de nivel es la diferencia de energía entre ambos estados con $n$ en el estado final y $n'$ el estado inicial.
 
 \begin{equation}\label{eq:energy_n}
-  \Delta E=\frac{me^4}{8\epsilon_0^2h^2}(\frac{1}{n'^2}-\frac{1}{n^2})
+    \Delta E=\frac{me^4}{8\epsilon_0^2h^2}(\frac{1}{n'^2}-\frac{1}{n^2})
 \end{equation}
 
 Recordando el postulado de Plank \cite{planck1901} $E=\frac{hc}{\lambda}$, Remplazamos en \ref{eq:energy_n} y obtenemos la fórmula de \textit{Rydberg} con $R_{\infty}=\frac{me^4}{8\epsilon_0^2h^2}$
 
 \begin{equation}\label{eq:formula_Rydberg}
-  \frac{1}{\lambda}=R_{\infty}(\frac{1}{n'^2}-\frac{1}{n^2})
+    \frac{1}{\lambda}=R_{\infty}(\frac{1}{n'^2}-\frac{1}{n^2})
 \end{equation}
 
 La ecuación \ref{eq:formula_Rydberg} describe que el inverso de la longitud de onda respecto es igual a una constante denominada la constante de \textit{Rydberg} $R_{\infty}$ y al cambio en la órbita del electrón\cite{rydberg1914}.
 
-Despejando $h^3$ en la ecuación \ref{eq:formula_Rydberg} se encuentra que
+Despejando $h^3$ en la ecuación \cref{eq:formula_Rydberg} se encuentra que
 
 \begin{equation}\label{eq:planck}
+<<<<<<< HEAD
   h^3 = \frac{e^4 m}{8 \epsilon^2_0 c}\left( \frac{1}{2^2} - \frac{1}{n^2_j} \right) \lambda
   =======
   El modelo atómico de Bohr, propuesto en 1914 por Niels Bohr, describe al átomo
@@ -200,3 +202,7 @@ Despejando $h^3$ en la ecuación \ref{eq:formula_Rydberg} se encuentra que
   \begin{equation}\label{eq:planck}
     h^3 = \frac{m e^4}{8 \epsilon_0^2 c}\left(\frac{1}{n_f^2}-\frac{1}{n^2}\right) \lambda
   \end{equation}
+=======
+  h^3 = \frac{e^4 m_e}{8 \epsilon^2_0 c}\left( \frac{1}{n'^2} - \frac{1}{n^2} \right) \lambda
+\end{equation}
+>>>>>>> 415d7798b26f6c28192efaad7d3d3d0b09eda3a7
