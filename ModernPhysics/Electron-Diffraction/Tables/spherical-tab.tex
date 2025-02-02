@@ -7,31 +7,28 @@
 	columns={0,1,2,3,4},
 	columns/0/.style={
 		column name={\text{\(U\) \([\si{\kilo\volt}]\)}},
-		column type={S[table-format=1.1]},
+		column type={@{}c},
 		fixed zerofill,
 		precision=1,
 	},
 	columns/1/.style={
 		column name={\text{\(r_1\) \([\si{\milli\metre}]\)}},
-		column type={S[table-format=1.2]},
 		fixed zerofill,
 		precision=2,
 	},
 	columns/2/.style={
 		column name={\text{\(r_2\) \([\si{\milli\metre}]\)}},
-		column type={S[table-format=1.2]},
 		fixed zerofill,
 		precision=2,
 	},
 	columns/3/.style={
 		column name={\text{\(\lambda\) \([\si{\pico\metre}]\)}},
-		column type={S[table-format=1.1]},
 		fixed zerofill,
 		precision=1,
 	},
 	columns/4/.style={
 		column name={\text{\(\sigma_\lambda\) \([\si{\pico\metre}]\)}},
-		column type={S[table-format=1.1]},
+		column type={c@{}},
 	},
 	string type,
 	every head row/.style={
