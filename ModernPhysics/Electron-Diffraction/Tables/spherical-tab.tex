@@ -4,20 +4,22 @@
 	col sep=tab,
 	header=true,
 	zerofill,
+	fixed zerofill,
+	fixed,
 	columns={0,1,2,3,4},
 	columns/0/.style={
-		column name={\text{\(U\) \([\si{\kilo\volt}]\)}},
 		column type={@{}c},
+		column name={\text{\(U\) \([\si{\kilo\volt}]\)}},
 		fixed zerofill,
 		precision=1,
 	},
 	columns/1/.style={
-		column name={\text{\(r_1\) \([\si{\milli\metre}]\)}},
+		column name={\text{\(r_1\) \([\si{\centi\metre}]\)}},
 		fixed zerofill,
-		precision=2,
+		precision=3,
 	},
 	columns/2/.style={
-		column name={\text{\(r_2\) \([\si{\milli\metre}]\)}},
+		column name={\text{\(r_2\) \([\si{\centi\metre}]\)}},
 		fixed zerofill,
 		precision=2,
 	},
@@ -35,6 +37,7 @@
 		before row=\toprule,
 		after row=\midrule,
 	},
+	every cell/.style={math mode},
 	every last row/.style={after row=\bottomrule}]{./Data/spherical-data.tsv}
 	\vspace{1.5pt}
 	\caption{Datos del montaje de Tubo Esférico.}

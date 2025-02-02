@@ -14,12 +14,12 @@
 		precision=1,
 	},
 	columns/1/.style={
-		column name={\text{\(r_1\) \([\si{\milli\metre}]\)}},
+		column name={\text{\(r_1\) \([\si{\centi\metre}]\)}},
 		fixed zerofill,
 		precision=2,
 	},
 	columns/2/.style={
-		column name={\text{\(r_2\) \([\si{\milli\metre}]\)}},
+		column name={\text{\(r_2\) \([\si{\centi\metre}]\)}},
 		fixed zerofill,
 		precision=2,
 	},
@@ -31,6 +31,7 @@
 	columns/4/.style={
 		column type={c@{}},
 		column name={\text{\(\sigma_\lambda\) \([\si{\pico\metre}]\)}},
+		precision=1,
 	},
 	every head row/.style={
 		before row=\toprule,
