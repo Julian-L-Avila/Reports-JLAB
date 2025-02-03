@@ -1,0 +1,45 @@
+\begin{table}[htbp!]
+	\centering
+	\pgfplotstabletypeset[
+	col sep=tab,
+	header=true,
+	zerofill,
+	columns={0,1,2,3,4},
+	columns/0/.style={
+		column name={\text{\(U\) \([\si{\kilo\volt}]\)}},
+		column type={S[table-format=1.1]},
+		fixed zerofill,
+		precision=1,
+	},
+	columns/1/.style={
+		column name={\text{\(r_1\) \([\si{\milli\metre}]\)}},
+		column type={S[table-format=1.2]},
+		fixed zerofill,
+		precision=2,
+	},
+	columns/2/.style={
+		column name={\text{\(r_2\) \([\si{\milli\metre}]\)}},
+		column type={S[table-format=1.2]},
+		fixed zerofill,
+		precision=2,
+	},
+	columns/3/.style={
+		column name={\text{\(\lambda\) \([\si{\pico\metre}]\)}},
+		column type={S[table-format=1.1]},
+		fixed zerofill,
+		precision=1,
+	},
+	columns/4/.style={
+		column name={\text{\(\sigma_\lambda\) \([\si{\pico\metre}]\)}},
+		column type={S[table-format=1.1]},
+	},
+	string type,
+	every head row/.style={
+		before row=\toprule,
+		after row=\midrule,
+	},
+	every last row/.style={after row=\bottomrule}]{./Data/spherical-data.tsv}
+	\vspace{1.5pt}
+	\caption{Datos del montaje de Tubo Esférico.}
+	\label{tab:spherical-data}
+\end{table}
