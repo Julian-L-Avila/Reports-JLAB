@@ -1,0 +1,67 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage[dvipsnames]{xcolor}
+
+\pgfplotsset{compat=newest}
+
+\begin{document}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		title={Tubo Cilíndrico},
+		title style={font=\large, yshift=1ex},
+		width=12cm,
+		height=8cm,
+		xlabel={\(\lambda \, [\si{\pico\metre}]\)},
+		ylabel={\(r \, [\si{\centi\metre}]\)},
+		xlabel style={font=\large},
+		ylabel style={font=\large},
+		grid=both,
+		grid style={gray!30, dashed},
+		legend style={font=\small, draw=none},
+		legend pos=north west,
+		every axis plot/.append style={thick},
+		xmin=16.9,
+		xmax=20.8,
+		xtick distance=1.3,
+		minor x tick num=2,
+		ytick distance=0.3,
+		minor y tick num=2,
+	]
+	\addplot[
+		only marks,
+		color=Plum,
+		line width=1.2pt,
+		mark options={scale=0.5},
+		forget plot,
+	]
+	table[col sep=tab, x index=3, y index=1]{../Data/linear-data.tsv};
+
+	\addplot[
+		color=Plum,
+		samples=100,
+		domain=16.9:20.8,
+		]{0.05083104320122725 * x + 0.3085500404250948};
+	\addlegendentry{\(r_i\)}
+
+	\addplot[
+		only marks,
+		color=Green,
+		line width=1.2pt,
+		mark options={scale=0.5},
+		forget plot,
+	]
+	table[col sep=tab, x index=3, y index=2]{../Data/linear-data.tsv};
+
+	\addplot[
+		color=Green,
+		samples=100,
+		domain=16.9:20.8,
+		]{0.12456856170026918 * x - 0.17427341768953708};
+	\addlegendentry{\(r_o\)}
+	\end{axis}
+\end{tikzpicture}
+
+\end{document}
