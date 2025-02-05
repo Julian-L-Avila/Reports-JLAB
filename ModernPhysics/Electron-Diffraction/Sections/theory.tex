@@ -1,0 +1,69 @@
+La hipótesis de De Broglie, formulada en 1924 \cite{debroglie1924}, establece que las partículas materiales poseen propiedades ondulatorias, asociando a cada partícula una longitud de onda inversamente proporcional a su cantidad de movimiento. Este postulado fue verificado experimentalmente en 1927 mediante la observación de la difracción de electrones al atravesar cristales \cite{davisson1927}.
+
+La difracción es un fenómeno característico de las ondas, en el cual la propagación de una onda se ve alterada al encontrarse con obstáculos \cite{thomson1928}, generando nuevos frentes de onda que pueden interferir entre sí. En el caso de los electrones, este comportamiento se evidenció en experimentos que mostraron patrones de interferencia similares a los observados con ondas luminosas (véase la figura \cref{fig:bragg}).
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.85\linewidth]{Images/diffracion.png}
+    \caption{Refracción en ondas.}
+    \label{fig:bragg}
+  \end{center}
+\end{figure}
+
+La relación de De Broglie permite calcular la longitud de onda de una partícula a partir de su cantidad de movimiento $p$, según la expresión $\lambda = h / p$, donde $h$ es la constante de Planck. En términos de la energía $E$, esta relación puede reescribirse como $\lambda = hc / E$.
+
+Para un electrón acelerado por una diferencia de potencial $U$, su energía total incluye tanto su energía en reposo como la energía adquirida del campo eléctrico. Al aplicar la relación relativista entre energía y momento, dada por \cref{eq:Energy},
+
+\begin{equation}\label{eq:Energy}
+    (pc)^2 = (mc^2 + eU_a)^2 - (mc^2)
+\end{equation}
+
+se obtiene una expresión modificada para la longitud de onda:
+
+\begin{equation}\label{eq:lambda}
+  \lambda = \frac{h c}{\sqrt{(e U)^2 + 2 e U m c^2}},
+\end{equation}
+
+la cual muestra explícitamente la dependencia de la longitud de onda con la energía adquirida por el electrón.
+
+Para que sea posible la difracción de los electrones, la longitud de onda \cref{eq:lambda} debe ser comparable con la distancia interplanar $d$ visto en la figura \cref{fig:graphite}.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.85\linewidth]{Images/graphite.png}
+    \caption{Red cristalina de grafito.}
+    \label{fig:graphite}
+  \end{center}
+\end{figure}
+
+Con la longitud de onda dada por \cref{eq:lambda}, se puede aplicar la ley de difracción de Bragg dado que el electrón se comporta como se observa en la figura \cref{fig:diffraction}
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.85\linewidth]{Images/diffracion.png}
+    \caption{Refracción en ondas al cruzar por dos rendijas.}
+    \label{fig:diffraction}
+  \end{center}
+\end{figure}
+
+La ley de bragg \cite{bragg1913} para el comportamiento de la figura \cref{fig:bragg} se modela en la ecuación \cref{eq:Bragg}.
+
+\begin{equation}\label{eq:Bragg}
+    2d\sin{\theta} = n\lambda,
+\end{equation}
+
+Donde $d$ es la distancia reticular interplanar del grafito y $\theta$ es el ángulo de refracción. Considerando ángulos pequeños, se puede aproximar $\sin{2\theta} = 2\sin{\theta} = \frac{r}{R}$, y al despejar en \cref{eq:Bragg}, se obtiene una ecuación lineal de la forma $a\lambda + b$:
+
+\begin{equation}\label{eq:linear_r}
+    r = \frac{2R}{d} n \lambda.
+\end{equation}
+
+Para determinar la distancia interplanar del material, se puede aplicar la ecuación \cref{eq:linear_r}, lo que lleva a la expresión para el parámetro esférico en \cref{eq:parameter-spherical} y para el parámetro lineal en \cref{eq:parameter-linear}:
+
+\begin{equation}\label{eq:parameter-spherical}
+  d = \frac{2 R}{a},
+\end{equation}
+
+\begin{equation}\label{eq:parameter-linear}
+  d = \frac{L}{a}.
+\end{equation}
