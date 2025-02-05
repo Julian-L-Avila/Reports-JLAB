@@ -1,7 +1,27 @@
+En los \cref{tab:spherical,tab:linear} se presentan los radios medidos de los
+anillos del patrón de interferencia, obtenidos para distintos potenciales de
+aceleración en los montajes de tubo esférico y cilíndrico, respectivamente.
+Asimismo, se muestra la longitud de onda asociada del electrón \( \lambda \),
+calculada a partir de la \cref{eq:wavelength}, junto con su desviación estándar
+correspondiente \( \sigma_\lambda \).
 
 \input{./Tables/spherical-tab.tex}
 
 \input{./Tables/linear-tab.tex}
+
+Se observa una relación proporcional entre \( r \) y \( \lambda \), en
+coincidencia con la teoría.
+A partir de una regresión lineal de cada radio en función de la longitud de onda,
+se obtienen las \cref{fig:regression-spherical,fig:regression-cylinder}.
+Utilizando las pendientes obtenidas y las relaciones \cref{eq:parameter-spherical,eq:parameter-linear},
+se determinan los parámetros de distancia interplanar presentados en \cref{tab:parameters}.
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=\linewidth]{./Figures/spherical-graph.pdf}
+  \caption{Regresión lineal de los datos obtenidos con el montaje de tubo esférico.}
+  \label{fig:regression-spherical}
+\end{figure}
 
 \begin{figure}[htbp!]
   \centering
@@ -10,9 +30,7 @@
   \label{fig:regression-cylinder}
 \end{figure}
 
-\begin{figure}[htbp!]
-  \centering
-  \includegraphics[width=\linewidth]{./Figures/spherical-graph.pdf}
-  \caption{Regresión lineal de los datos obtenidos con el montaje de tubo esférico.}
-  \label{fig:regression-spherical}
-\end{figure}
+\input{./Tables/parameters-tab.tex}
+
+Los radios interiores se originan debido a una mayor distancia recorrida por
+los electrones, lo que se refleja en los valores obtenidos para \( d \).
