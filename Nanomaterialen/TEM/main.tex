@@ -1,0 +1,421 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\usepackage{csquotes}
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage[version=4]{mhchem}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\addbibresource{TEM.bib}
+
+\title{Microscopía Electrónica de Transmisión (TEM)}
+\subtitle{Técnica de Caracterización de Nanomateriales}
+\date{\today}
+\author{Acuña-Avila-Huertas-Martínez-Parada-Rodriguez}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Contenido}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents
+\end{frame}
+
+\section{Contexto Histórico}
+
+\input{Historia}
+
+\section{Principios Físicos}
+\input{physics-principles}
+
+\section{El Instrumento (TEM)}
+\begin{frame}{El Instrumento}
+    \begin{itemize}
+        \item El TEM opera bajo principios ópticos análogos a un microscopio óptico, pero utilizando electrones y campos electromagnéticos.
+        \item La columna del microscopio se divide en tres sistemas fundamentales:
+        \begin{enumerate}
+            \item \textbf{Sistema de iluminación:} Cañón de electrones y lentes condensadoras.
+            \item \textbf{Sistema formador de imagen:} Lente objetivo, portamuestras y aperturas.
+            \item \textbf{Sistema de proyección y detección:} Lentes intermedias/proyectoras y detectores (cámaras CCD/CMOS).
+        \end{enumerate}
+        \item Todo el sistema requiere condiciones de ultra alto vacío ($10^{-7}$ a $10^{-9} \, \text{Torr}$) para evitar la dispersión del haz por moléculas de gas.
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{images/SEMvTEM-Beam-Comparison-Figure.jpg} \\
+        {\tiny Imagen obtenida de: \url{https://www.nanoscience.com/blogs/whats-the-difference-between-sem-and-tem/}}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Sistema de Iluminación: El Cañón de Electrones}
+    \textbf{Generación del haz:}\\
+        El cañón de electrones genera, acelera y enfoca el haz inicial. Típicamente operan a voltajes de aceleración entre $100\text{ keV}$ y $300\text{ keV}$.
+    \vspace{0.2cm}
+    Existen dos tecnologías principales:
+    \begin{itemize}
+        \item \textbf{Emisión Termoiónica:} Filamentos de Wolframio (W) o Hexaboruro de Lantano ($\text{LaB}_6$). Los electrones superan la función de trabajo del material mediante calentamiento.
+        \item \textbf{Emisión de Campo (FEG):} Emplea un cristal de Wolframio muy afilado sometido a un intenso campo eléctrico. Ofrece mayor coherencia espacial, mayor brillo y una menor dispersión energética.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Lentes Electromagnéticas}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item A diferencia de las lentes de vidrio, el TEM usa bobinas de alambre rodeadas por polos de hierro magnético.
+                \item La trayectoria de los electrones se curva debido a la fuerza de Lorentz:
+                $$ \mathbf{F} = -e(\mathbf{v} \times \mathbf{B}) $$
+                \item Variando la corriente en las bobinas, se altera el campo magnético $\mathbf{B}$ y, por ende, la distancia focal de la lente.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=0.4\textwidth]{images/lente_electromagnetica.png} \\
+                {\tiny Imagen obtenida de: \url{http://www.cientificosaficionados.com/foros/viewtopic.php?t=17475}}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Jerarquía de Lentes y Aperturas}
+\begin{columns}
+    \begin{column}{0.6\textwidth}
+        \begin{itemize}
+            \item \textbf{Lentes Condensadoras:} Controlan el tamaño del spot y la convergencia del haz que incide sobre la muestra.
+            \item \textbf{Lente Objetivo:} Es el corazón del TEM. Determina el límite de resolución espacial. Las aberraciones esféricas ($C_s$) y cromáticas ($C_c$) son los principales factores limitantes.
+            \item \textbf{Apertura de la Lente Objetivo:} Bloquea electrones dispersados a ángulos altos, mejorando significativamente el contraste de la imagen.   
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{images/microsc.png} \\
+            {\tiny Imagen obtenida de: \url{https://www.biologia.edu.ar/microscopia/microscopia1.htm}}
+        \end{center}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cámara de Muestra y Goniómetro}
+\begin{columns}
+        \begin{column}{0.6\textwidth}
+            La muestra debe ser extremadamente delgada (típicamente $< 100\text{
+            nm}$) para ser ``transparente'' a los electrones.
+            \begin{itemize}
+                \item \textbf{Portamuestras:} Varilla de precisión mecánica que inserta la rejilla de cobre o carbono en el centro del campo magnético de la lente objetivo.
+                \item \textbf{Goniómetro:} Mecanismo que permite rotar e inclinar la muestra en los ejes $x$ e $y$ (tilt/double tilt) con precisión nanométrica.
+                \item Vital para alinear ejes zonales cristalográficos paralelos al haz de electrones.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{center}
+            \includegraphics[width=0.8\textwidth]{images/portamuestras.jpg} \\
+            {\tiny Imagen obtenida de: \url{https://es.123rf.com/photo_190998080_el-portamuestras-del-microscopio-electrónico-de-transmisión-se-ha-cargado-con-una-muestra-en-una-rej.html}}
+    \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Detectores y Adquisición de Datos}
+\begin{columns}
+    \begin{column}{0.6\textwidth}
+        Una vez que los electrones atraviesan la muestra y son magnificados por las lentes intermedias y proyectoras, inciden sobre el sistema de detección:
+        \begin{itemize}
+            \item \textbf{Pantalla fluorescente:} Para la visualización directa y alineación manual.
+            \item \textbf{Cámaras Digitales (CCD/CMOS):} Convertidores de electrones en fotones y luego en señales digitales.
+            \item \textbf{Cámaras de Detección Directa:} Sensores modernos que detectan los electrones incidentes sin conversión previa a luz, mejorando la relación señal/ruido (DQE).
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{images/scheme_TEM.png} \\
+            {\tiny Imagen obtenida de:\url{https://es.wikipedia.org/wiki/Microscopio_electrónico_de_transmisión}}
+        \end{center}
+    \end{column}
+\end{columns}    
+\end{frame}
+
+\section{Análisis de Imagen}
+\begin{frame}{Análisis de Imágenes}
+    \begin{itemize}
+        \item \textbf{Campo Claro (Bright Field):} Zonas más densas o gruesas dispersan más electrones y se ven oscuras; el fondo vacío se ve brillante.
+        
+        \item \textbf{Difracción (SAED):} Permite analizar la estructura cristalográfica, diferenciando si el material es amorfo, policristalino o monocristalino.
+        \item \textbf{Alta Resolución (HRTEM):} Utiliza contraste de fase para visualizar directamente los planos atómicos.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Imagen de campo claro}
+\begin{itemize}
+        \item Modo mas comun de operacion
+        \item e transmitidos forman la img de campo claro
+        \item Secciones oscuras (Mayor grosor, densidad, numero atomico)
+        \item Proyeccion 2D de sample
+    \end{itemize}
+\end{frame}
+\begin{frame}{Imagen de campo claro}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{0.png}
+    \label{fig:placeholder}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Imagen de campo claro}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{image1.png}
+    \label{fig:placeholder}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Imagen de campo oscuro}
+\begin{itemize}
+
+        \item e difractados forman la img de campo oscuro
+        \item Permite identificar distintas prop no visibles en imagen de campo claro
+        \item Aisla defectos o fases cristalinas
+        
+    \end{itemize}
+\end{frame}
+\begin{frame}{Imagen de campo oscuro}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{3.png}
+    \label{fig:placeholder}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Imagen de campo oscuro}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{2.png}
+    \label{fig:placeholder}
+\end{figure}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}{Difraccion SAED}
+\begin{itemize}
+
+        \item ``Selected Area Electron Diffraction''
+        \item Lente objetivo forma un patron de difraccion en el plano focal trasero
+        \item Mediado por la potencia del lente intermedio
+        \item Permite analizar la estructura cristalografica, diferenciando si el material es amorfo, policristalino o monocristalino.
+        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Difraccion SAED}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{5.png}
+    \label{fig:placeholder}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Difraccion SAED}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{6.png}
+    \label{fig:placeholder}
+\end{figure}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}{Alta resolucion HRTEM}
+\begin{itemize}
+
+        \item visualizacion de la estructura atómica
+        \item Utiliza constraste de fase utilizando los haces directos y difractados
+        \item Al igual que en campo oscuro se pueden seleccionar ciertos rayos difractados
+        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Alta resolucion HRTEM}
+
+
+\begin{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{8.png}
+    \caption{Enter Caption}
+    \label{fig:placeholder}
+\end{figure}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Alta resolucion HRTEM}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{7.png}
+    \label{fig:placeholder}
+\end{figure}
+\end{frame}
+
+\section{Ejemplo practico}
+% Diapositiva 1: Nanotubos y Grafeno
+\begin{frame}{1. Nanotubos de Carbono (CNTs) y Grafeno}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \textbf{Importancia y Aplicaciones:}
+            \begin{itemize}
+                \item Propiedades eléctricas, térmicas y mecánicas excepcionales.
+                \item Uso en nanoelectrónica y almacenamiento de energía.
+            \end{itemize}
+            \vspace{0.3cm}
+            \textbf{¿Por qué usar TEM?}
+            \begin{itemize}
+                \item Permite contar las paredes de grafeno (clasificar en SWCNT o MWCNT).
+                \item Indispensable para observar defectos topológicos en la red hexagonal.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=\textwidth]{nano-tubos.png}
+                \caption{\scriptsize Imagen TEM de nanotubos \cite{gallego2014hydrogen}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Diapositiva 2: Nanopartículas Metálicas
+\begin{frame}{2. Nanopartículas Metálicas}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \textbf{Importancia y Aplicaciones:}
+            \begin{itemize}
+                \item Destacan por la resonancia de plasmones superficiales.
+                \item Uso en biosensores y catálisis.
+            \end{itemize}
+            \vspace{0.3cm}
+            \textbf{¿Por qué usar TEM?}
+            \begin{itemize}
+                \item Revela la morfología exacta.
+                \item En alta resolución (HRTEM), permite ver los planos cristalográficos.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=\textwidth]{nano-oro.png}
+                \caption{\scriptsize Nanopartículas de oro (A), plata (B) y platino (C), biosintetizadas con extractos de \textit{Neurospora crassa} \cite{castro2016centro}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Diapositiva 3: Puntos Cuánticos
+\begin{frame}{3. Puntos Cuánticos (Quantum Dots)}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \textbf{Ejemplos Específicos:}
+            \begin{itemize}
+                \item Puntos Cuánticos de Carbono (C-QDs).
+                \item Semiconductores: Seleniuro de Cadmio (CdSe) o Sulfuro de Plomo (PbS).
+            \end{itemize}
+            \vspace{0.3cm}
+            \textbf{¿Por qué usar TEM?}
+            \begin{itemize}
+                \item El tamaño dicta el color de emisión de luz; el TEM mide el diámetro con precisión atómica para asegurar uniformidad en los lotes.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \includegraphics[width=\textwidth]{Qdots.png}
+                \caption{\scriptsize C-QDs recién sintetizados. (A) Baja resolución, (B) Alta resolución, se aprecian las redes cristalinas \cite{dager2019synthesis}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Diapositiva 4: Nanopartículas Core-Shell
+\begin{frame}{4. Nanopartículas Core-Shell (Núcleo-Corteza)}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Ejemplos Específicos:}
+            \begin{itemize}
+                \item NaYF$_4$:Yb/Tm@Au (Núcleo de tierras raras, corteza de oro).
+                \item NaYF$_4$:Yb/Er@CdSe.
+            \end{itemize}
+            \vspace{0.3cm}
+            \textbf{¿Por qué usar TEM?}
+            \begin{itemize}
+                \item Confirma la envoltura uniforme y mide su grosor. 
+                \item El contraste por número atómico diferencia el núcleo de la corteza.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \includegraphics[width=\textwidth, height=4cm, keepaspectratio]{core.png}
+                \caption{\tiny NPs core-shell no epitaxiales: (a) NaYF$_4$:Yb/Tm@Au, (b) NaYF$_4$:Yb/Er@CdSe, (c) QDs en sílice sobre NaYF$_4$:Yb/Er, (d) NPs de oro acopladas a NaYF$_4$:Yb/Er mediante sílice \cite{chen2014photon}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Resumen de la Técnica}
+    \begin{alertblock}{Ventajas}
+        Resolución atómica, información combinada (morfológica y cristalográfica) en un solo equipo.
+    \end{alertblock}
+    
+    \begin{alertblock}{Desafíos}
+        Alta exigencia en la preparación de la muestra (debe ser transparente a los electrones) y riesgo de dañar la muestra por la alta energía del haz.
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Referencias}
+  \printbibliography
+  \nocite{*}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \vspace{1cm}
+  {\Huge Gracias.}\\[1cm]
+\end{frame}
+
+\end{document}
