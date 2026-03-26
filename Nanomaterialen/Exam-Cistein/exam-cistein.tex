@@ -27,6 +27,7 @@
   group-separator={\,},
   separate-uncertainty
 }
+\AtBeginDocument{\decimalpoint}
 
 \theoremstyle{thmstyleone}%
 \newtheorem{theorem}{Teorema}%
@@ -40,6 +41,8 @@
 \newtheorem{definition}{Definición}%
 
 \DeclareSIUnit\angstrom{\text{\r{A}}}
+\DeclareSIUnit{\molar}{M}
+
 
 \raggedbottom
 \unnumbered% uncomment this for unnumbered level heads
