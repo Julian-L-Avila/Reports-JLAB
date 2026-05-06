@@ -16,8 +16,9 @@
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{mhchem}
 
-\addbibresource{TEM.bib}
+\addbibresource{stm.bib}
 
 \title{Scanning Tunneling Microscope}
 \subtitle{}
@@ -29,24 +30,27 @@
 
 \maketitle
 
-\begin{frame}{Contents}
+\begin{frame}{Contenido}
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents
 \end{frame}
 
-\section{Historical Context}
+\section{Contexto histórico}
 \input{./sections/historical.tex}
 
-\section{Physical Principles}
+\section{Principios Físicos}
 \input{./sections/physics.tex}
 
-\section{Instrument (STM)}
+\section{Instrumento (STM)}
 \input{./sections/instrument.tex}
 
-\section{Image Analysis}
-\input{./sections/image-analysis.tex}
+\section{Análisis de Imagen}
+\input{sections/image-analysis}
 
-\begin{frame}[allowframebreaks]{References}
+\section{Ejemplos Experimentales}
+\input{./sections/ejemplos.tex}
+
+\begin{frame}[allowframebreaks]{Referencias}
   \printbibliography
   \nocite{*}
 \end{frame}
@@ -54,7 +58,7 @@
 \begin{frame}[plain]
   \centering
   \vspace{1cm}
-  {\Huge Thank You.}\\[1cm]
+  {\Huge Gracias.}\\[1cm]
 \end{frame}
 
 \end{document}
