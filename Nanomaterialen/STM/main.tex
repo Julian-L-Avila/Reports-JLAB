@@ -1,0 +1,64 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\usepackage{csquotes}
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage[version=4]{mhchem}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{mhchem}
+
+\addbibresource{stm.bib}
+
+\title{Scanning Tunneling Microscope}
+\subtitle{}
+\date{\today}
+\author{Acuña-Avila-Huertas-Martínez-Parada-Rodriguez}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Contenido}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents
+\end{frame}
+
+\section{Contexto histórico}
+\input{./sections/historical.tex}
+
+\section{Principios Físicos}
+\input{./sections/physics.tex}
+
+\section{Instrumento (STM)}
+\input{./sections/instrument.tex}
+
+\section{Análisis de Imagen}
+\input{sections/image-analysis}
+
+\section{Ejemplos Experimentales}
+\input{./sections/ejemplos.tex}
+
+\begin{frame}[allowframebreaks]{Referencias}
+  \printbibliography
+  \nocite{*}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \vspace{1cm}
+  {\Huge Gracias.}\\[1cm]
+\end{frame}
+
+\end{document}
